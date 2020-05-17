@@ -1,0 +1,121 @@
+baseurl: "https://flaskcon.github.io/website"
+title: "FlaskCon"
+canonifyurls: true
+theme: "hugo-conference"
+
+GoogleAnalytics: ""
+
+params:
+  # Conference info
+  Name: "FlaskCon 2020"
+  # Description: "Conference description"
+  Date: "26 Jun 2020"
+  Venue: "Online!"
+  Images: ["/img/flaskcon_logo.svg"]
+
+  # Active sections on the website to deactivate comment out with '#'
+  # you can also change order here and it will reflect on page
+  Sections:
+    - about
+    # - location
+    # - speakers
+    # - schedule
+    # - reviewers
+    - partners
+    - mpartners
+    # - contact
+
+  # Titles which you can translate to other languages
+  Titles:
+    about: "About"
+    location: "Location"
+    speakers: "Speakers"
+    schedule: "Schedule"
+    partners: "Our Organisers"
+    reviewers: "Reviewers"
+    mpartners: "Our Media Partners"
+    sponsors: "Sponsors"
+    contact: "Contact"
+
+  # The Call To Action button at the header,
+  # If you don't want this, just remove the callToAction property.
+  CallToAction:
+    text: "Submit a talk!"
+    link: "https://sessionize.com/flaskcon"
+
+  # List of Reviewers
+
+  Reviewers:
+    - text: ""
+
+
+  # List of Organisers
+  Partners:
+    - name: "Pallets"
+      logo: "/img/logos/pallets.png"
+      url: "https://palletsprojects.com/"
+    - name: "PyMUG"
+      logo: "/img/pymug_new.svg"
+      url: "pymug.com"
+    - name: "PythonIreland"
+      logo: "/img/pyie.png"
+      url: "http://braziljs.org"
+    - name: "BangPypers"
+      logo: "/img/bangpypers.png"
+      url: "https://bangalore.python.org.in/"
+    - name: "PythonNigeria"
+      logo: "/img/pynigeria.svg"
+      url: "http://pythonnigeria.org/"
+    - name: "PyCon China"
+      logo: "/img/python_china.jpg"
+      url: "https://cn.pycon.org/en/index.html"
+    - name: "PythonMoscow"
+      logo: "/img/python_moscow.png"
+      url: "http://www.moscowpython.ru/"
+    - name: "PyAmsterdam"
+      logo: "/img/python_amsterdam.svg"
+      url: "https://py.amsterdam/"
+
+
+
+    # List of Media Partners
+  mpartners:
+    - name: "Discord"
+      logo: "/img/python_discord.jpg"
+      url: "https://discord.gg/python"
+    - name: "r/Flask"
+      logo: "/img/r_flask.jpg"
+      url: "https://www.reddit.com/r/flask/"
+
+
+  # The entire schedule
+  Schedule:
+    - name: "Check-in / Breakfast"
+      time: "9h00"
+
+    - name: "Linus Torvalds"
+      photo: "/img/speaker.jpg"
+      bio: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo"
+      company: "Linux Foundation"
+      link:
+        href: "http://twitter.com/linus"
+        text: "@linus"
+      presentation:
+        title: "Digging into a Linux Kernel"
+        description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo"
+        time: "10h00"
+
+    - name: "Bill Gates"
+      photo: "/img/speaker.jpg"
+      bio: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo"
+      company: "Microsoft"
+      link:
+        href: "http://github.com/billy95"
+        text: "@billy95"
+      presentation:
+        title: "Introducing Windows 12"
+        description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo"
+        time: "11h00"
+
+    - name: "Lunch"
+      time: "12h00"
