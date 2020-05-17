@@ -716,7 +716,7 @@ nav {
    HEADER
    ========================================================================== */
 .header {
-  background-image: url('/img/flaskcon_logo.svg');
+  background-image: url('/website/img/flaskcon_logo.svg');
   background-color: #2b2b2b;
   background-repeat: no-repeat;
   background-position: left;
