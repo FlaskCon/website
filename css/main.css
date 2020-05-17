@@ -338,7 +338,7 @@ nav {
 }
 .logo-name {
   margin-bottom: 0;
-  font-size: 10em;
+  font-size: 6em;
   letter-spacing: -0.04em;
 }
 .tagline {
@@ -590,7 +590,7 @@ nav {
 }
 @media only screen and (max-width: 480px) {
   /* nav */
-  nav {
+  #nav {
     display: none;
   }
   .header {
