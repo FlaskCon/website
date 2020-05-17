@@ -1,4 +1,4 @@
-baseurl: "https://flaskcon.github.io/website"
+baseurl: "https://flaskcon.github.io/website/"
 title: "FlaskCon"
 canonifyurls: true
 theme: "hugo-conference"
