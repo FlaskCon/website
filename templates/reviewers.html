@@ -1,0 +1,14 @@
+<div class="section-title" id="reviewers">
+    <h2>Reviewers</h2>
+</div>
+<div class="container">
+    <div class="section-info">
+        {%for reviewer in REVIEWERS%}
+            <div>
+                <div class="bullet"></div> 
+                <div class="reviewer-text">{{reviewer[0]}}</div>
+                <div>{{reviewer[1]}}</div>
+            </div>
+        {%endfor%}
+    </div>
+</div>
