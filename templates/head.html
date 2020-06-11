@@ -91,8 +91,8 @@
         border: none;
         border-bottom: 10px solid #f17808;
         padding: 5px;
-        width: 200px;
         margin-left: 10%;
+        width: 100px;
     }
     .section-title h2{
     }
@@ -133,5 +133,24 @@
         padding: 10px;
         background-color: gray;
         color: white;
+    }
+    body{
+            overflow-x: hidden !important;
+            padding: 30px !important;
+          }
+    .scroll-able {
+        overflow-y: scroll;
+        scrollbar-width: none; /* Firefox */
+        -ms-overflow-style: none;  /* Internet Explorer 10+ */
+    }
+    .scroll-able::-webkit-scrollbar { /* WebKit */
+        width: 0;
+        height: 0;
+    }
+    .scroll-content{
+        max-width: 100%; min-width: 500px;
+    }
+    .scroll-content-main{
+        max-width: 100%; min-width: 1000px;
     }
 </style>

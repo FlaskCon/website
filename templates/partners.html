@@ -2,17 +2,22 @@
 <div class="section-title" id="partners">
     <h2>Media Partners</h2>
 </div>
-<div class="container">
-    <div class="section-info">
-        {%for partner in MEDIA%}
-            <div class="card organiser-card">
-                <a href="{{partner['url']}}">
-                    <div title="{{partner['name']}}">
-                        <img width="100" height="100" src="{{partner['logo']}}">
+<div style="overflow-x: scroll" class="scroll-able">
+    <div style="" class="scroll-content">
+
+        <div class="container">
+            <div class="section-info">
+                {%for partner in MEDIA%}
+                    <div class="card organiser-card">
+                        <a href="{{partner['url']}}">
+                            <div title="{{partner['name']}}">
+                                <img width="100" height="100" src="{{partner['logo']}}">
+                            </div>
+                        </a>
                     </div>
-                </a>
+                    
+                {%endfor%}
             </div>
-            
-        {%endfor%}
+        </div>
     </div>
 </div>
