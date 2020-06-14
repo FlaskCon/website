@@ -9,6 +9,7 @@
 <!-- CSS only -->
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+<link href="https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap" rel="stylesheet">
 <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 
 
@@ -26,6 +27,12 @@
      -webkit-filter: grayscale(50%); /* Safari 6.0 - 9.0 */
       filter: grayscale(50%);
       /*height: 500px;*/
+      height: 100%;
+      min-height: 100vh;
+    }
+
+    .fira-text{
+        font-family: 'Fira Sans', sans-serif;
     }
 
     .main-info{
@@ -48,24 +55,15 @@
         background: rgb(231,20,20) !important;
         background: radial-gradient(circle, rgba(231,20,20,1) 0%, rgba(241,120,8,1) 36%, rgba(69,150,28,1) 100%) !important;
     }
-    .flask-nav-item{
-        background-color: rgba(0, 0, 0, 0.7) !important;
-        border-radius: 3px;
-        margin: 10px;
-        padding: 5px;
-        
+    .navbar{
+        transition: top 0.3s;
     }
     .flask-nav-item .flask-nav-text{
-        color: white!important;
+        color: white;
         font-weight: bold;
     }
     .flask-nav-item:hover{
-        background-color: rgba(255, 255, 255, 0.7) !important;
-        color: white !important;
-    }
-    .flask-nav-item:hover .flask-nav-text{
-        color: black!important;
-        font-weight: bold;
+        font-style: italic;
     }
     a{
         text-decoration: inherit; !important;
@@ -86,9 +84,6 @@
     }
     .submit-talk:active{
         border: 5px solid #43bba3;
-    }
-    #cdown{
-        font-size: 10px;
     }
     .section-title{
         border: none;
@@ -156,74 +151,109 @@
     .scroll-content-main{
         max-width: 100%; min-width: 1000px;
     }
+    #goTop {
+        display: none;
+        position: fixed;
+        bottom: 0;
+        right: 0;
+        margin: 10px;
+        border: none;
+        outline: none;
+        background-color: #f17808;
+        color: white;
+        cursor: pointer;
+        padding: 15px;
+        border-radius: 10px;
+        font-size: 18px;
+      }
+      
+      #goTop:hover {
+        background-color: #555;
+      }
+      
 </style>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light fcon-nav flask-nav">
-  <a class="navbar-brand" href="#">
-    <img src="assets/img/FlaskCon_Logo.png" width=50 height=50>
-  </a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active flask-nav-item">
-        <a class="nav-link" href="#"><span class="flask-nav-text">Home</span><span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item flask-nav-item">
-        <a class="nav-link" href="#about"><span class="flask-nav-text">About</span></a>
-      </li>
-      <li class="nav-item flask-nav-item">
-        <a class="nav-link" href="#reviewers"><span class="flask-nav-text">Reviewers</span></a>
-      </li>
-      <li class="nav-item flask-nav-item">
-        <a class="nav-link" href="#organisers"><span class="flask-nav-text">Organisers</span></a>
-      </li>
-      <li class="nav-item flask-nav-item">
-        <a class="nav-link" href="#partners"><span class="flask-nav-text">Partners</span></a>
-      </li>
-      <li class="nav-item flask-nav-item">
-        <a class="nav-link" href="#coc"><span class="flask-nav-text">CodeOfConduct</span></a>
-      </li>
-      <li class="nav-item flask-nav-item">
-        <a class="nav-link" href="#coc"><span class="flask-nav-text">Contact</span></a>
-      </li>
-    </ul>
-  </div>
+<button onclick="goTopFunction()" id="goTop" title="Go to top"><span class="fa fa-arrow-up"></span></button>
+<nav class="navbar navbar-expand-lg bg-dark fira-text" id="navbar">
+    <a class="navbar-brand" href="#">
+        <img src="assets/img/FlaskCon_Logo.png" class="overflow-hidden" width=50 height=50 style="transform: scale(2.2); margin-right: 30px; ">
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="fa fa-bars" style="color: white"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse text-right" id="navbarTogglerDemo02">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active flask-nav-item">
+            <a class="nav-link" href="#"><span class="flask-nav-text">Home</span><span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item flask-nav-item">
+            <a class="nav-link" href="#about"><span class="flask-nav-text">About</span></a>
+          </li>
+          <li class="nav-item flask-nav-item">
+            <a class="nav-link" href="#reviewers"><span class="flask-nav-text">Reviewers</span></a>
+          </li>
+          <li class="nav-item flask-nav-item">
+            <a class="nav-link" href="#organisers"><span class="flask-nav-text">Organisers</span></a>
+          </li>
+          <li class="nav-item flask-nav-item">
+            <a class="nav-link" href="#partners"><span class="flask-nav-text">Partners</span></a>
+          </li>
+          <li class="nav-item flask-nav-item">
+            <a class="nav-link" href="#coc"><span class="flask-nav-text">CodeOfConduct</span></a>
+          </li>
+          <li class="nav-item flask-nav-item">
+            <a class="nav-link" href="#coc"><span class="flask-nav-text">Contact</span></a>
+          </li>    
+      </ul>
+    </div>
 </nav>
-    <header class="jumbotron jumbotron-fluid header">
-    <!--
-    <div class="container-fluid text-center"> 
-       <h1 class="display-3">FlaskCon 2020</h1>
-       <p class="lead pb-4">A 100% Flask-Focused event!</p>
-       <p><a href="#" class="btn btn-primary btn-lg" role="button">Learn More</a></p>
-    </div>
--->
-  <div style="overflow-x: scroll" class="scroll-able">
-    <div style="" class="scroll-content-main">
-      <div class="card main-info" >
-          <h2><p class="text-center main-icon"><i class="fa fa-calendar-alt"></i></p> 4&5 July</h2>
-          <h2><p class="text-center main-icon"><i class="fas fa-clock"></i></p> 9AM GMT - 14GMT</h2>
-          <h2><p class="text-center main-icon"><i class="fa fa-map-marker-alt"></i></p> Remote</h2>
-          <h2><p class="text-center main-icon"><i class="fa fa-scroll"></i></p> CFP End: 14th June</h2>
-          <a href="https://sessionize.com/flaskcon">
-              <div class="submit-talk text-center" style="">
-                  Submit A Talk 
-              </div>
-          </a>
 
-          <span><br></span><span id="cdown"></span>
+<header class="jumbotron header-page jumbotron-fluid header">
+    <div class="row">
+        <div class="col-sm-6">
+          <div class="card" style="background-color: transparent; border: none; outline: none;">
+            <div class="card-body text-center">
+                <img src="/assets/img/FlaskCon_Logo.png" style="width: 350px" />
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="card" style="background-color: transparent; border: none; outline: none; color: white;">
+            <div class="card-body fira-text">
+                <hr />
+                <div class="countdown">
+                    <h4>
+                        <div class="row">
+                            <div class="col-auto">
+                                <span id="cdown-days"></span>
+                            </div>
+                            <div class="col-auto">
+                                <span id="cdown-hours"></span>
+                            </div>
+                            <div class="col-auto">
+                                <span id="cdown-minutes"></span>
+                            </div>
+                            <div class="col-auto">
+                                <span id="cdown-seconds"></span>
+                            </div>
+                        </div>
+                    </h4>
+                </div>
+                <hr /> 
+                <h3><strong>July 4th & 5th</strong></h3>
+                <h5><i class="fa fa-clock"></i> 9:00 - 14:00 GMT</h5>
+                <h5><i class="fa fa-map-marker"></i> Remote</h5>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
 </header>
-
 
 <script>
 // Set the date we're counting down to
-var countDownDate = new Date("Jun 14, 2020 23:59:59").getTime();
+var countDownDate = new Date("July 4, 2020 23:59:59").getTime();
 
 // Update the count down every 1 second
 var x = setInterval(function() {
@@ -241,15 +271,42 @@ var x = setInterval(function() {
   var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
   // Display the result in the element with id="demo"
-  document.getElementById("cdown").innerHTML = days + "d " + hours + "h "
-  + minutes + "m " + seconds + "s ";
+  document.getElementById("cdown-days").innerHTML = days + "<br/>days ";
+  document.getElementById("cdown-hours").innerHTML = hours + "<br/>hours ";
+  document.getElementById("cdown-minutes").innerHTML = minutes + "<br/>minutes ";
+  document.getElementById("cdown-seconds").innerHTML = seconds + "<br/>seconds ";
+
+//  document.getElementById("cdown").innerHTML = days + "<br/>d " + hours + "h " + minutes + "m " + seconds + "s ";
 
   // If the count down is finished, write some text
   if (distance < 0) {
     clearInterval(x);
-    document.getElementById("cdown").innerHTML = "EXPIRED";
+    document.getElementById("cdown-days").innerHTML = "EXPIRED";
+    document.getElementById("cdown-hours").innerHTML = "";
+    document.getElementById("cdown-minutes").innerHTML = "";
+    document.getElementById("cdown-seconds").innerHTML = "";
   }
 }, 1000);
+
+mybutton = document.getElementById("goTop");
+
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function goTopFunction() {
+  document.body.scrollTop = 0; // For Safari
+  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+}
+
 </script>
     
 <div style="padding: 30px">
