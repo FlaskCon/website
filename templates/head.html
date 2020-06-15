@@ -13,6 +13,7 @@
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+<link href="https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap" rel="stylesheet">
 
 <style type="text/css">
     .header{
@@ -23,6 +24,12 @@
      -webkit-filter: grayscale(50%); /* Safari 6.0 - 9.0 */
       filter: grayscale(50%);
       /*height: 500px;*/
+      height: 100%;
+      min-height: 100vh;
+    }
+
+    .fira-text{
+        font-family: 'Fira Sans', sans-serif;
     }
 
     .main-info{
@@ -45,24 +52,15 @@
         background: rgb(231,20,20) !important;
         background: radial-gradient(circle, rgba(231,20,20,1) 0%, rgba(241,120,8,1) 36%, rgba(69,150,28,1) 100%) !important;
     }
-    .flask-nav-item{
-        background-color: rgba(0, 0, 0, 0.7) !important;
-        border-radius: 3px;
-        margin: 10px;
-        padding: 5px;
-        
+    .navbar{
+        transition: top 0.3s;
     }
     .flask-nav-item .flask-nav-text{
-        color: white!important;
+        color: white;
         font-weight: bold;
     }
     .flask-nav-item:hover{
-        background-color: rgba(255, 255, 255, 0.7) !important;
-        color: white !important;
-    }
-    .flask-nav-item:hover .flask-nav-text{
-        color: black!important;
-        font-weight: bold;
+        font-style: italic;
     }
     a{
         text-decoration: inherit; !important;
@@ -83,9 +81,6 @@
     }
     .submit-talk:active{
         border: 5px solid #43bba3;
-    }
-    #cdown{
-        font-size: 10px;
     }
     .section-title{
         border: none;
@@ -153,4 +148,24 @@
     .scroll-content-main{
         max-width: 100%; min-width: 1000px;
     }
+    #goTop {
+        display: none;
+        position: fixed;
+        bottom: 0;
+        right: 0;
+        margin: 10px;
+        border: none;
+        outline: none;
+        background-color: #f17808;
+        color: white;
+        cursor: pointer;
+        padding: 15px;
+        border-radius: 10px;
+        font-size: 18px;
+      }
+      
+      #goTop:hover {
+        background-color: #555;
+      }
+      
 </style>

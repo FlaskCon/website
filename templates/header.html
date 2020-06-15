@@ -1,25 +1,40 @@
-<header class="jumbotron jumbotron-fluid header">
-    <!--
-    <div class="container-fluid text-center"> 
-       <h1 class="display-3">FlaskCon 2020</h1>
-       <p class="lead pb-4">A 100% Flask-Focused event!</p>
-       <p><a href="#" class="btn btn-primary btn-lg" role="button">Learn More</a></p>
+<button type="button" id="goTop" onclick="return goTop()"><i class="fa fa-arrow-up"></i></button>
+<header class="jumbotron header-page jumbotron-fluid header">
+  <div class="row">
+    <div class="col-sm-6">
+      <div class="card" style="background-color: transparent; border: none; outline: none;">
+        <div class="card-body text-center">
+          <img src="/assets/img/FlaskCon_Logo.png" style="width: 350px" />
+        </div>
+      </div>
     </div>
--->
-  <div style="overflow-x: scroll" class="scroll-able">
-    <div style="" class="scroll-content-main">
-      <div class="card main-info" >
-          <h2><p class="text-center main-icon"><i class="fa fa-calendar-alt"></i></p> 4&5 July</h2>
-          <h2><p class="text-center main-icon"><i class="fas fa-clock"></i></p> 9AM GMT - 14GMT</h2>
-          <h2><p class="text-center main-icon"><i class="fa fa-map-marker-alt"></i></p> Remote</h2>
-          <h2><p class="text-center main-icon"><i class="fa fa-scroll"></i></p> CFP End: 14th June</h2>
-          <a href="{{CFP_LINK}}">
-              <div class="submit-talk text-center" style="">
-                  Submit A Talk 
+    <div class="col-sm-6">
+      <div class="card" style="background-color: transparent; border: none; outline: none; color: white;">
+        <div class="card-body fira-text">
+          <hr />
+          <div class="countdown">
+            <h4>
+              <div class="row">
+                <div class="col-auto">
+                  <span id="cdown-days"></span>
+                </div>
+                <div class="col-auto">
+                  <span id="cdown-hours"></span>
+                </div>
+                <div class="col-auto">
+                  <span id="cdown-minutes"></span>
+                </div>
+                <div class="col-auto">
+                  <span id="cdown-seconds"></span>
+                </div>
               </div>
-          </a>
-
-          <span><br></span><span id="cdown"></span>
+            </h4>
+          </div>
+          <hr />
+          <h3><strong>July 4th & 5th</strong></h3>
+          <h5><i class="fa fa-clock"></i> 9:00 - 14:00 GMT</h5>
+          <h5><i class="fa fa-map-marker"></i> Remote</h5>
+        </div>
       </div>
     </div>
   </div>
@@ -27,32 +42,59 @@
 
 
 <script>
-// Set the date we're counting down to
-var countDownDate = new Date("Jun 14, 2020 23:59:59").getTime();
+  // Set the date we're counting down to
+  var countDownDate = new Date("July 4, 2020 23:59:59").getTime();
 
-// Update the count down every 1 second
-var x = setInterval(function() {
+  // Update the count down every 1 second
+  var x = setInterval(function () {
 
-  // Get today's date and time
-  var now = new Date().getTime();
+    // Get today's date and time
+    var now = new Date().getTime();
 
-  // Find the distance between now and the count down date
-  var distance = countDownDate - now;
+    // Find the distance between now and the count down date
+    var distance = countDownDate - now;
 
-  // Time calculations for days, hours, minutes and seconds
-  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    // Time calculations for days, hours, minutes and seconds
+    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-  // Display the result in the element with id="demo"
-  document.getElementById("cdown").innerHTML = days + "d " + hours + "h "
-  + minutes + "m " + seconds + "s ";
+    // Display the result in the element with id="demo"
+    document.getElementById("cdown-days").innerHTML = days + "<br/>days ";
+    document.getElementById("cdown-hours").innerHTML = hours + "<br/>hours ";
+    document.getElementById("cdown-minutes").innerHTML = minutes + "<br/>minutes ";
+    document.getElementById("cdown-seconds").innerHTML = seconds + "<br/>seconds ";
 
-  // If the count down is finished, write some text
-  if (distance < 0) {
-    clearInterval(x);
-    document.getElementById("cdown").innerHTML = "EXPIRED";
+    //  document.getElementById("cdown").innerHTML = days + "<br/>d " + hours + "h " + minutes + "m " + seconds + "s ";
+
+    // If the count down is finished, write some text
+    if (distance < 0) {
+      clearInterval(x);
+      document.getElementById("cdown-days").innerHTML = "EXPIRED";
+      document.getElementById("cdown-hours").innerHTML = "";
+      document.getElementById("cdown-minutes").innerHTML = "";
+      document.getElementById("cdown-seconds").innerHTML = "";
+    }
+  }, 1000);
+
+  mybutton = document.getElementById("goTop");
+
+  // When the user scrolls down 20px from the top of the document, show the button
+  window.onscroll = function () { scrollFunction() };
+
+  function scrollFunction() {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+      mybutton.style.display = "block";
+    } else {
+      mybutton.style.display = "none";
+    }
   }
-}, 1000);
+
+  // When the user clicks on the button, scroll to the top of the document
+  function goTop() {
+    document.body.scrollTop = 0; // For Safari
+    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+  }
+
 </script>
