@@ -5,42 +5,50 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta charset="utf-8">
 
-<link rel="shortcut icon" href="assets/img/FlaskCon_Logo.png" type="favicon/ico" />
+<link rel="shortcut icon" href="assets/img/FlaskCon_Logo.png" type="favicon/ico"/>
 <!-- CSS only -->
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+      integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 <link rel="stylesheet" type="text/css" href="assets/css/style.css">
 <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 
 
 <!-- JS, Popper.js, and jQuery -->
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+        crossorigin="anonymous"></script>
 <link href="https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap" rel="stylesheet">
 
 <style type="text/css">
-    .header{
-     background-image: url('assets/img/flask_background.png');
-     background-attachment: fixed;
-     background-size: cover;
-     background-position: center;
-     -webkit-filter: grayscale(50%); /* Safari 6.0 - 9.0 */
-      filter: grayscale(50%);
-      /*height: 500px;*/
-      height: 100%;
-      min-height: 100vh;
+    .header {
+        background-image: url('assets/img/flask_background.png');
+        background-attachment: fixed;
+        background-size: cover;
+        background-position: center;
+        -webkit-filter: grayscale(50%); /* Safari 6.0 - 9.0 */
+        filter: grayscale(50%);
+        /*height: 500px;*/
+        height: 100%;
+        min-height: 100vh;
     }
 
-    .fira-text{
+    .fira-text {
         font-family: 'Fira Sans', sans-serif;
     }
 
-    .main-info{
+    .main-info {
         margin-left: 20%;
         margin-right: 20%;
         padding: 50px;
     }
-    .main-icon{
+
+    .main-icon {
         background-color: #3789ff;
         padding: 10px;
         border-radius: 5px;
@@ -48,30 +56,40 @@
         height: 60px !important;
         display: inline-block;
     }
-    .main-icon i{
+
+    .main-icon i {
         color: white;
     }
-    .flask-nav{
-        background: rgb(231,20,20) !important;
-        background: radial-gradient(circle, rgba(231,20,20,1) 0%, rgba(241,120,8,1) 36%, rgba(69,150,28,1) 100%) !important;
+
+    .flask-nav {
+        background: rgb(231, 20, 20) !important;
+        background: radial-gradient(circle, rgba(231, 20, 20, 1) 0%, rgba(241, 120, 8, 1) 36%, rgba(69, 150, 28, 1) 100%) !important;
     }
-    .navbar{
+
+    .navbar {
         transition: top 0.3s;
     }
-    .flask-nav-item .flask-nav-text{
+
+    .flask-nav-item .flask-nav-text {
         color: white;
         font-weight: bold;
     }
-    .flask-nav-item:hover{
+
+    .flask-nav-item:hover {
         font-style: italic;
     }
-    a{
-        text-decoration: inherit; !important;
+
+    a {
+        text-decoration: inherit;
+    !important;
     }
-    a:hover{
-        text-decoration: inherit; !important;
+
+    a:hover {
+        text-decoration: inherit;
+    !important;
     }
-    .submit-talk{
+
+    .submit-talk {
         background-color: #1ab394;
         padding: 10px;
         border-radius: 5px;
@@ -79,21 +97,26 @@
         border: 5px solid #1ab394;
         font-weight: bold;
     }
-    .submit-talk:hover{
+
+    .submit-talk:hover {
         border: 5px solid #40d6b8;
     }
-    .submit-talk:active{
+
+    .submit-talk:active {
         border: 5px solid #43bba3;
     }
-    .section-title{
+
+    .section-title {
         border: none;
         border-bottom: 10px solid #f17808;
         padding: 5px;
         margin-left: 10%;
         width: 100px;
     }
-    .section-title h2{
+
+    .section-title h2 {
     }
+
     .section-info {
         margin-top: 60px;
         margin-left: 20%;
@@ -101,25 +124,29 @@
         margin-bottom: 120px;
         text-align: justify;
     }
-    .quote{
+
+    .quote {
         border-left: 5px solid #d6c23f;
         margin: 10px;
         padding: 20px;
         background-color: #f7e259;
     }
-    .bullet{
+
+    .bullet {
         width: 20px;
         height: 20px;
         border-radius: 10px;
         background-color: #f97f5c;
         display: inline-block;
     }
-    .reviewer-text{
+
+    .reviewer-text {
         display: inline-block;
         margin-bottom: 5px;
         font-size: 25px;
     }
-    .organiser-card{
+
+    .organiser-card {
         border: 5px solid gray;
         display: inline-block;
         margin: 5px;
@@ -127,30 +154,39 @@
         float: left;
         background-color: #faf9f5;
     }
-    .flask-footer{
+
+    .flask-footer {
         padding: 10px;
         background-color: gray;
         color: white;
     }
-    body{
-            overflow-x: hidden !important;
-            
-          }
+
+    body {
+        overflow-x: hidden !important;
+
+    }
+
     .scroll-able {
         overflow-y: scroll;
         scrollbar-width: none; /* Firefox */
-        -ms-overflow-style: none;  /* Internet Explorer 10+ */
+        -ms-overflow-style: none; /* Internet Explorer 10+ */
     }
+
     .scroll-able::-webkit-scrollbar { /* WebKit */
         width: 0;
         height: 0;
     }
-    .scroll-content{
-        max-width: 100%; min-width: 500px;
+
+    .scroll-content {
+        max-width: 100%;
+        min-width: 500px;
     }
-    .scroll-content-main{
-        max-width: 100%; min-width: 1000px;
+
+    .scroll-content-main {
+        max-width: 100%;
+        min-width: 1000px;
     }
+
     #goTop {
         display: none;
         position: fixed;
@@ -165,48 +201,51 @@
         padding: 15px;
         border-radius: 10px;
         font-size: 18px;
-      }
-      
-      #goTop:hover {
+    }
+
+    #goTop:hover {
         background-color: #555;
-      }
-      
+    }
+
 </style>
 </head>
 <body>
     <nav class="navbar navbar-expand-lg bg-dark fira-text" id="navbar">
-  <a class="navbar-brand" href="#">
-      <img src="assets/img/FlaskCon_Logo.png" class="overflow-hidden" width=50 height=50 style="transform: scale(2.2); margin-right: 30px; ">
-  </a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="fa fa-bars" style="color: white"></span>
-  </button>
+    <a class="navbar-brand" href="#">
+        <img src="assets/img/FlaskCon_Logo.png" class="overflow-hidden" width=50 height=50
+             style="transform: scale(2.2); margin-right: 30px; ">
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02"
+            aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="fa fa-bars" style="color: white"></span>
+    </button>
 
-  <div class="collapse navbar-collapse text-right" id="navbarTogglerDemo02">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active flask-nav-item">
-          <a class="nav-link" href="#"><span class="flask-nav-text">Home</span><span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item flask-nav-item">
-          <a class="nav-link" href="#about"><span class="flask-nav-text">About</span></a>
-        </li>
-        <li class="nav-item flask-nav-item">
-          <a class="nav-link" href="#reviewers"><span class="flask-nav-text">Reviewers</span></a>
-        </li>
-        <li class="nav-item flask-nav-item">
-          <a class="nav-link" href="#organisers"><span class="flask-nav-text">Organisers</span></a>
-        </li>
-        <li class="nav-item flask-nav-item">
-          <a class="nav-link" href="#partners"><span class="flask-nav-text">Partners</span></a>
-        </li>
-        <li class="nav-item flask-nav-item">
-          <a class="nav-link" href="#coc"><span class="flask-nav-text">CodeOfConduct</span></a>
-        </li>
-        <li class="nav-item flask-nav-item">
-          <a class="nav-link" href="#coc"><span class="flask-nav-text">Contact</span></a>
-        </li>    
-    </ul>
-  </div>
+    <div class="collapse navbar-collapse text-right" id="navbarTogglerDemo02">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active flask-nav-item">
+                <a class="nav-link" href="#"><span class="flask-nav-text">Home</span><span
+                        class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item flask-nav-item">
+                <a class="nav-link" href="#about"><span class="flask-nav-text">About</span></a>
+            </li>
+            <li class="nav-item flask-nav-item">
+                <a class="nav-link" href="#reviewers"><span class="flask-nav-text">Reviewers</span></a>
+            </li>
+            <li class="nav-item flask-nav-item">
+                <a class="nav-link" href="#organisers"><span class="flask-nav-text">Organisers</span></a>
+            </li>
+            <li class="nav-item flask-nav-item">
+                <a class="nav-link" href="#partners"><span class="flask-nav-text">Partners</span></a>
+            </li>
+            <li class="nav-item flask-nav-item">
+                <a class="nav-link" href="#coc"><span class="flask-nav-text">CodeOfConduct</span></a>
+            </li>
+            <li class="nav-item flask-nav-item">
+                <a class="nav-link" href="#coc"><span class="flask-nav-text">Contact</span></a>
+            </li>
+        </ul>
+    </div>
 </nav>
     <button type="button" id="goTop" onclick="return goTop()"><i class="fa fa-arrow-up"></i></button>
 <header class="jumbotron header-page jumbotron-fluid header">
@@ -319,7 +358,10 @@
             <div class="section-info">
                 <div class="quote">⭐ 100% Free, Community-driven and Remote ⭐</div>
 
-                FlaskCon is a community driven Flask event intended for speakers and attendees all over the world to participate in technical and evangelical sessions related to Flask. Feel free to submit one using the button above! They will be reviewed by an awesome team composed of Pallets members, Flask maintainers and more.
+                FlaskCon is a community driven Flask event intended for speakers and attendees all over the world to
+                participate in technical and evangelical sessions related to Flask. Feel free to submit one using
+                the button above! They will be reviewed by an awesome team composed of Pallets members,
+                Flask maintainers and more.
             </div>
         </div>
     </div>
@@ -510,7 +552,10 @@
         
         <div class="container">
             <div class="section-info">
-                FlaskCon is a diverse community who maintains a reputation as a friendly, welcoming, inspiring and dynamic group. We’d like to keep it that way, which is why we ask all participants, speakers, organizers and sponsors (collectively: the attendees) to follow the same code of conduct (CoC) as upheld by <a href="https://ep2020.europython.eu/coc/">EuroPython 2020</a>.
+                FlaskCon is a diverse community who maintains a reputation as a friendly, welcoming, inspiring and
+                dynamic group. We’d like to keep it that way, which is why we ask all participants, speakers,
+                organizers and sponsors (collectively: the attendees) to follow the same code of conduct (CoC)
+                as upheld by <a href="https://ep2020.europython.eu/coc/">EuroPython 2020</a>.
             </div>
         </div>
     </div>
@@ -522,7 +567,7 @@
     <div style="" class="scroll-content">
         <div class="container">
             <div class="section-info">
-                flaskcon at gmail.com
+                flaskcon [-AT-] gmail.com
             </div>
         </div>
     </div>
