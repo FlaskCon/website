@@ -1,18 +1,14 @@
-import socket
 import http.server
+import socket
 import socketserver
 
 # tasklist
 # /IM py37.exe /F
-# 
-hostname = socket.gethostname()
-PORT = 8000
-IP = socket.gethostbyname(hostname)
-print('serving on:', IP)
+#
 
-Handler = http.server.SimpleHTTPRequestHandler
-with socketserver.TCPServer(('', PORT), Handler) as httpd:
+PORT = 8000
+print(f'serving on: {socket.gethostbyname(socket.gethostname())}')
+
+with socketserver.TCPServer(('', PORT), http.server.SimpleHTTPRequestHandler) as httpd:
     print('PORT:', PORT)
     httpd.serve_forever()
-
-
