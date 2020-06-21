@@ -5,37 +5,58 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta charset="utf-8">
 
-<link rel="shortcut icon" href="assets/img/FlaskCon_Logo.png" type="favicon/ico"/>
+<link rel="shortcut icon" href="assets/img/FlaskCon_Logo.png" type="favicon/ico" />
 <!-- CSS only -->
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
-      integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 <link rel="stylesheet" type="text/css" href="assets/css/style.css">
 <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap" rel="stylesheet">
+
 
 
 <!-- JS, Popper.js, and jQuery -->
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-        crossorigin="anonymous"></script>
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-        crossorigin="anonymous"></script>
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
-        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
-        crossorigin="anonymous"></script>
+    integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+    crossorigin="anonymous"></script>
 <link href="https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap" rel="stylesheet">
 
 <style type="text/css">
     .header {
-        background-image: url('assets/img/flask_background.png');
-        background-attachment: fixed;
-        background-size: cover;
-        background-position: center;
-        -webkit-filter: grayscale(50%); /* Safari 6.0 - 9.0 */
-        filter: grayscale(50%);
-        /*height: 500px;*/
+        color: #202020;
+        background-color: white;
         height: 100%;
         min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .header-title .badge {
+        color: white;
+        font-size: calc(3vw + 1vh + 1vmin);
+        margin: 10px;
+        transform: rotate(-5deg) scale(2);
+    }
+
+    .badge {
+        color: #202020 !important;
+    }
+
+    .parallax {
+        background-image: url('assets/img/flask_background.png');
+        width: 100%;
+        height: 400px;
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
     }
 
     .fira-text {
@@ -61,17 +82,15 @@
         color: white;
     }
 
-    .flask-nav {
-        background: rgb(231, 20, 20) !important;
-        background: radial-gradient(circle, rgba(231, 20, 20, 1) 0%, rgba(241, 120, 8, 1) 36%, rgba(69, 150, 28, 1) 100%) !important;
-    }
-
     .navbar {
         transition: top 0.3s;
+        margin-bottom: 50px;
+        background-color: white;
+        margin-bottom: 50px;
     }
 
     .flask-nav-item .flask-nav-text {
-        color: white;
+        color: #202020;
         font-weight: bold;
     }
 
@@ -81,12 +100,10 @@
 
     a {
         text-decoration: inherit;
-    !important;
     }
 
     a:hover {
         text-decoration: inherit;
-    !important;
     }
 
     .submit-talk {
@@ -114,7 +131,8 @@
         width: 100px;
     }
 
-    .section-title h2 {
+    .section{
+        margin-top: 10%;
     }
 
     .section-info {
@@ -163,28 +181,7 @@
 
     body {
         overflow-x: hidden !important;
-
-    }
-
-    .scroll-able {
-        overflow-y: scroll;
-        scrollbar-width: none; /* Firefox */
-        -ms-overflow-style: none; /* Internet Explorer 10+ */
-    }
-
-    .scroll-able::-webkit-scrollbar { /* WebKit */
-        width: 0;
-        height: 0;
-    }
-
-    .scroll-content {
-        max-width: 100%;
-        min-width: 500px;
-    }
-
-    .scroll-content-main {
-        max-width: 100%;
-        min-width: 1000px;
+        font-family: 'Fira Sans', sans-serif;
     }
 
     #goTop {
@@ -207,17 +204,33 @@
         background-color: #555;
     }
 
+    .countdown {
+        text-align: center !important;
+        font-family: 'Staatliches', cursive;
+    }
+
+    .countdown .cdown {
+        font-size: calc(4vw + 0.1vh + 0.1vmin);
+        padding: 20px;
+    }
+
+    .event-info {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
 </style>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg bg-dark fira-text" id="navbar">
+    <nav class="navbar navbar-expand-lg fira-text fixed-top" id="navbar">
     <a class="navbar-brand" href="#">
         <img src="assets/img/FlaskCon_Logo.png" class="overflow-hidden" width=50 height=50
-             style="transform: scale(2.2); margin-right: 30px; ">
+            style="transform: scale(2.2); margin-right: 30px;">
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02"
-            aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="fa fa-bars" style="color: white"></span>
+        aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="fa fa-bars" style="color: #202020"></span>
     </button>
 
     <div class="collapse navbar-collapse text-right" id="navbarTogglerDemo02">
@@ -249,37 +262,35 @@
 </nav>
     <button type="button" id="goTop" onclick="return goTop()"><i class="fa fa-arrow-up"></i></button>
 <header class="jumbotron header-page jumbotron-fluid header">
-  <div class="row">
-    <div class="col-sm-6">
-      <div class="card" style="background-color: transparent; border: none; outline: none;">
-        <div class="card-body text-center">
-          <img src="/assets/img/FlaskCon_Logo.png" style="width: 350px" class="img-fluid" />
+  <div class="row" style="background-color: transparent; border: none; outline: none; padding-top: 20vh">
+    <div class="col text-center fira-text">
+      <div class="header-title">
+        <h1><span class="badge">FlaskCon <br><p style="text-align: right; font-size: 20px; color: #f17808;">2020</p></span></h1>
+      </div>
+      <hr />
+      <div class="row text-center">
+        <div class="countdown">
+          <h4>
+            <div class="row">
+              <div class="col-md-auto">
+                <span id="cdown-days" class="cdown cdown-days"></span><br/>days
+              </div>
+              <div class="col-md-auto">
+                <span id="cdown-hours" class="cdown cdown-hours"></span><br/>hours
+              </div>
+              <div class="col-md-auto">
+                <span id="cdown-minutes" class="cdown cdown-minutes"></span><br/>minutes
+              </div>
+              <div class="col-md-auto">
+                <span id="cdown-seconds" class="cdown cdown-seconds"></span><br/>seconds
+              </div>
+            </div>
+          </h4>
         </div>
       </div>
-    </div>
-    <div class="col-sm-6">
-      <div class="card" style="background-color: transparent; border: none; outline: none; color: white;">
-        <div class="card-body fira-text">
-          <hr />
-          <div class="countdown">
-            <h4>
-              <div class="row">
-                <div class="col-auto">
-                  <span id="cdown-days"></span>
-                </div>
-                <div class="col-auto">
-                  <span id="cdown-hours"></span>
-                </div>
-                <div class="col-auto">
-                  <span id="cdown-minutes"></span>
-                </div>
-                <div class="col-auto">
-                  <span id="cdown-seconds"></span>
-                </div>
-              </div>
-            </h4>
-          </div>
-          <hr />
+      <hr />
+      <div class="row">
+        <div class="col event-info">
           <h3><strong>July 4th & 5th</strong></h3>
           <h5><i class="fa fa-clock"></i> 9:00 - 14:00 GMT</h5>
           <h5><i class="fa fa-map-marker"></i> Remote</h5>
@@ -288,6 +299,7 @@
     </div>
   </div>
 </header>
+<div class="parallax"></div>
 
 
 <script>
@@ -310,20 +322,20 @@
     var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
     // Display the result in the element with id="demo"
-    document.getElementById("cdown-days").innerHTML = days + "<br/>days ";
-    document.getElementById("cdown-hours").innerHTML = hours + "<br/>hours ";
-    document.getElementById("cdown-minutes").innerHTML = minutes + "<br/>minutes ";
-    document.getElementById("cdown-seconds").innerHTML = seconds + "<br/>seconds ";
+    document.querySelector(".cdown-days").innerHTML = days;
+    document.querySelector(".cdown-hours").innerHTML = hours;
+    document.querySelector(".cdown-minutes").innerHTML = minutes;
+    document.querySelector(".cdown-seconds").innerHTML = seconds;
 
     //  document.getElementById("cdown").innerHTML = days + "<br/>d " + hours + "h " + minutes + "m " + seconds + "s ";
 
     // If the count down is finished, write some text
     if (distance < 0) {
       clearInterval(x);
-      document.getElementById("cdown-days").innerHTML = "EXPIRED";
-      document.getElementById("cdown-hours").innerHTML = "";
-      document.getElementById("cdown-minutes").innerHTML = "";
-      document.getElementById("cdown-seconds").innerHTML = "";
+      document.querySelector(".cdown-days").innerHTML = "EXPIRED";
+      document.querySelector(".cdown-hours").innerHTML = "";
+      document.querySelector(".cdown-minutes").innerHTML = "";
+      document.querySelector(".cdown-seconds").innerHTML = "";
     }
   }, 1000);
 
@@ -352,224 +364,197 @@
 <div class="section-title" id="about">
     <h2>About</h2>
 </div>
-<div style="overflow-x: scroll"  class="scroll-able">
-    <div style="" class="scroll-content">
-        <div class="container">
-            <div class="section-info">
-                <div class="quote">⭐ 100% Free, Community-driven and Remote ⭐</div>
+<div class="row">
+    <div class="section-info fira-text">
+        <div class="quote">⭐ 100% Free, Community-driven and Remote ⭐</div>
 
-                FlaskCon is a community driven Flask event intended for speakers and attendees all over the world to
-                participate in technical and evangelical sessions related to Flask. Feel free to submit one using
-                the button above! They will be reviewed by an awesome team composed of Pallets members,
-                Flask maintainers and more.
-            </div>
-        </div>
+        FlaskCon is a community driven Flask event intended for speakers and attendees all over the world to
+        participate in technical and evangelical sessions related to Flask. Feel free to submit one using
+        the button above! They will be reviewed by an awesome team composed of Pallets members,
+        Flask maintainers and more.
     </div>
 </div>
 <div class="section-title" id="reviewers">
     <h2>Reviewers</h2>
 </div>
-<div style="overflow-x: scroll" class="scroll-able">
-    <div style="" class="scroll-content">
-        <div class="container">
-            <div class="section-info">
-                
-                    <div>
-                        <div class="bullet"></div> 
-                        <div class="reviewer-text">David</div>
-                        <div>(Pallets)</div>
-                    </div>
-                
-                    <div>
-                        <div class="bullet"></div> 
-                        <div class="reviewer-text">Adam Englander</div>
-                        <div>(Werkzeug Maintainer)</div>
-                    </div>
-                
-                    <div>
-                        <div class="bullet"></div> 
-                        <div class="reviewer-text">Grey Li</div>
-                        <div>(Flask Maintainer)</div>
-                    </div>
-                
-                    <div>
-                        <div class="bullet"></div> 
-                        <div class="reviewer-text">Julien Demoor</div>
-                        <div>(PyMUG)</div>
-                    </div>
-                
-                    <div>
-                        <div class="bullet"></div> 
-                        <div class="reviewer-text">Miguel Grinberg</div>
-                        <div>(Flask Maintainer, PythonIreland)</div>
-                    </div>
-                
-                    <div>
-                        <div class="bullet"></div> 
-                        <div class="reviewer-text">Ali-Akber Saifee</div>
-                        <div>(Flask-limiter)</div>
-                    </div>
-                
-                    <div>
-                        <div class="bullet"></div> 
-                        <div class="reviewer-text">Steven Loria</div>
-                        <div>(Marshmallow & Flask-marshmallow)</div>
-                    </div>
-                
-                    <div>
-                        <div class="bullet"></div> 
-                        <div class="reviewer-text">Namgyal Brisson</div>
-                        <div>(PyMUG)</div>
-                    </div>
-                
+<div class="row">
+    <div class="section-info">
+        
+            <div>
+                <div class="bullet"></div> 
+                <div class="reviewer-text">David</div>
+                <div>(Pallets)</div>
             </div>
-        </div>
+        
+            <div>
+                <div class="bullet"></div> 
+                <div class="reviewer-text">Adam Englander</div>
+                <div>(Werkzeug Maintainer)</div>
+            </div>
+        
+            <div>
+                <div class="bullet"></div> 
+                <div class="reviewer-text">Grey Li</div>
+                <div>(Flask Maintainer)</div>
+            </div>
+        
+            <div>
+                <div class="bullet"></div> 
+                <div class="reviewer-text">Julien Demoor</div>
+                <div>(PyMUG)</div>
+            </div>
+        
+            <div>
+                <div class="bullet"></div> 
+                <div class="reviewer-text">Miguel Grinberg</div>
+                <div>(Flask Maintainer, PythonIreland)</div>
+            </div>
+        
+            <div>
+                <div class="bullet"></div> 
+                <div class="reviewer-text">Ali-Akber Saifee</div>
+                <div>(Flask-limiter)</div>
+            </div>
+        
+            <div>
+                <div class="bullet"></div> 
+                <div class="reviewer-text">Steven Loria</div>
+                <div>(Marshmallow & Flask-marshmallow)</div>
+            </div>
+        
+            <div>
+                <div class="bullet"></div> 
+                <div class="reviewer-text">Namgyal Brisson</div>
+                <div>(PyMUG)</div>
+            </div>
+        
     </div>
 </div>
 <div class="section-title" id="organisers">
     <h2>Organisers</h2>
 </div>
-<div style="overflow-x: scroll" class="scroll-able">
-    <div style="" class="scroll-content">
+<div class="row">
+    <div class="section-info">
         
-        <div class="container">
-            <div class="section-info">
-                
-                    <div class="card organiser-card">
-                        <a href="https://pymug.com">
-                            <div title="PyMUG">
-                                <img width="100" height="100" src="/assets/img/pymug_new.svg">
-                            </div>
-                        </a>
+            <div class="card organiser-card">
+                <a href="https://pymug.com">
+                    <div title="PyMUG">
+                        <img width="100" height="100" src="/assets/img/pymug_new.svg">
                     </div>
-                    
-                
-                    <div class="card organiser-card">
-                        <a href="https://python.ie/">
-                            <div title="PythonIreland">
-                                <img width="100" height="100" src="/assets/img/pyie.png">
-                            </div>
-                        </a>
-                    </div>
-                    
-                
-                    <div class="card organiser-card">
-                        <a href="https://bangalore.python.org.in/">
-                            <div title="BangPypers">
-                                <img width="100" height="100" src="/assets/img/bangpypers.png">
-                            </div>
-                        </a>
-                    </div>
-                    
-                
-                    <div class="card organiser-card">
-                        <a href="http://pythonnigeria.org/">
-                            <div title="PythonNigeria">
-                                <img width="100" height="100" src="/assets/img/pynigeria.svg">
-                            </div>
-                        </a>
-                    </div>
-                    
-                
-                    <div class="card organiser-card">
-                        <a href="https://cn.pycon.org/en/index.html">
-                            <div title="PyCon China">
-                                <img width="100" height="100" src="/assets/img/python_china.jpg">
-                            </div>
-                        </a>
-                    </div>
-                    
-                
-                    <div class="card organiser-card">
-                        <a href="http://www.moscowpython.ru/">
-                            <div title="PythonMoscow">
-                                <img width="100" height="100" src="/assets/img/python_moscow.png">
-                            </div>
-                        </a>
-                    </div>
-                    
-                
-                    <div class="card organiser-card">
-                        <a href="https://py.amsterdam/">
-                            <div title="PyAmsterdam">
-                                <img width="100" height="100" src="/assets/img/python_amsterdam.svg">
-                            </div>
-                        </a>
-                    </div>
-                    
-                
-                    <div class="card organiser-card">
-                        <a href="http://gilpug.gitlab.io/">
-                            <div title="GilPug">
-                                <img width="100" height="100" src="/assets/img/GilPUG.jpg">
-                            </div>
-                        </a>
-                    </div>
-                    
-                
+                </a>
             </div>
-        </div>
+            
+        
+            <div class="card organiser-card">
+                <a href="https://python.ie/">
+                    <div title="PythonIreland">
+                        <img width="100" height="100" src="/assets/img/pyie.png">
+                    </div>
+                </a>
+            </div>
+            
+        
+            <div class="card organiser-card">
+                <a href="https://bangalore.python.org.in/">
+                    <div title="BangPypers">
+                        <img width="100" height="100" src="/assets/img/bangpypers.png">
+                    </div>
+                </a>
+            </div>
+            
+        
+            <div class="card organiser-card">
+                <a href="http://pythonnigeria.org/">
+                    <div title="PythonNigeria">
+                        <img width="100" height="100" src="/assets/img/pynigeria.svg">
+                    </div>
+                </a>
+            </div>
+            
+        
+            <div class="card organiser-card">
+                <a href="https://cn.pycon.org/en/index.html">
+                    <div title="PyCon China">
+                        <img width="100" height="100" src="/assets/img/python_china.jpg">
+                    </div>
+                </a>
+            </div>
+            
+        
+            <div class="card organiser-card">
+                <a href="http://www.moscowpython.ru/">
+                    <div title="PythonMoscow">
+                        <img width="100" height="100" src="/assets/img/python_moscow.png">
+                    </div>
+                </a>
+            </div>
+            
+        
+            <div class="card organiser-card">
+                <a href="https://py.amsterdam/">
+                    <div title="PyAmsterdam">
+                        <img width="100" height="100" src="/assets/img/python_amsterdam.svg">
+                    </div>
+                </a>
+            </div>
+            
+        
+            <div class="card organiser-card">
+                <a href="http://gilpug.gitlab.io/">
+                    <div title="GilPug">
+                        <img width="100" height="100" src="/assets/img/GilPUG.jpg">
+                    </div>
+                </a>
+            </div>
+            
+        
     </div>
 </div>
 <br>
 <div class="section-title" id="partners">
     <h2>Media Partners</h2>
 </div>
-<div style="overflow-x: scroll" class="scroll-able">
-    <div style="" class="scroll-content">
-
-        <div class="container">
-            <div class="section-info">
-                
-                    <div class="card organiser-card">
-                        <a href="https://discord.gg/python">
-                            <div title="PythonDiscord">
-                                <img width="100" height="100" src="/assets/img/python_discord.jpg">
-                            </div>
-                        </a>
+<div class="row">
+    <div class="section-info">
+        
+            <div class="card organiser-card">
+                <a href="https://discord.gg/python">
+                    <div title="PythonDiscord">
+                        <img width="100" height="100" src="/assets/img/python_discord.jpg">
                     </div>
-                    
-                
-                    <div class="card organiser-card">
-                        <a href="https://www.reddit.com/r/flask/">
-                            <div title="r/Flask">
-                                <img width="100" height="100" src="/assets/img/flask.png">
-                            </div>
-                        </a>
-                    </div>
-                    
-                
+                </a>
             </div>
-        </div>
+            
+        
+            <div class="card organiser-card">
+                <a href="https://www.reddit.com/r/flask/">
+                    <div title="r/Flask">
+                        <img width="100" height="100" src="/assets/img/flask.png">
+                    </div>
+                </a>
+            </div>
+            
+        
     </div>
 </div>
 <br><br>
 <div class="section-title" id="coc">
     <h2>Code of conduct</h2>
 </div>
-<div style="overflow-x: scroll"  class="scroll-able">
-    <div style="" class="scroll-content">
-        
-        <div class="container">
-            <div class="section-info">
-                FlaskCon is a diverse community who maintains a reputation as a friendly, welcoming, inspiring and
-                dynamic group. We’d like to keep it that way, which is why we ask all participants, speakers,
-                organizers and sponsors (collectively: the attendees) to follow the same code of conduct (CoC)
-                as upheld by <a href="https://ep2020.europython.eu/coc/">EuroPython 2020</a>.
-            </div>
-        </div>
+<div class="row">
+    <div class="section-info">
+        FlaskCon is a diverse community who maintains a reputation as a friendly, welcoming, inspiring and
+        dynamic group. We’d like to keep it that way, which is why we ask all participants, speakers,
+        organizers and sponsors (collectively: the attendees) to follow the same code of conduct (CoC)
+        as upheld by <a href="https://ep2020.europython.eu/coc/">EuroPython 2020</a>.
     </div>
 </div>
 <div class="section-title" id="contact">
     <h2>Contact</h2>
 </div>
-<div style="overflow-x: scroll"  class="scroll-able">
-    <div style="" class="scroll-content">
-        <div class="container">
-            <div class="section-info">
-                flaskcon [-AT-] gmail.com
-            </div>
-        </div>
+<div class="row">
+    <div class="section-info">
+        flaskcon [-AT-] gmail.com
     </div>
 </div>
 
