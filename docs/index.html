@@ -11,8 +11,7 @@
     integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 <link rel="stylesheet" type="text/css" href="assets/css/style.css">
 <script src="https://kit.fontawesome.com/a076d05399.js"></script>
-<link href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap" rel="stylesheet">
-
+<link href="https://fonts.googleapis.com/css2?family=Patua+One&display=swap" rel="stylesheet">
 
 
 <!-- JS, Popper.js, and jQuery -->
@@ -192,20 +191,25 @@
     }
 
     .countdown {
-        text-align: center !important;
-        font-family: 'Staatliches', cursive;
+        text-align: center;
+        font-family: 'Patua One', cursive;
     }
 
     .countdown .cdown {
         font-size: calc(4vw + 0.1vh + 0.1vmin);
-        padding: 20px;
+    }
+    
+    .countdown .badge{
+        border: 1px solid black;
+        padding: 10px 10px 0 10px;
+        border-radius: 10px;
+        width: 70px;
+        color: #202020 !important;
+        background-color: white;
     }
 
-    .event-info {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
+    .event-info{
+        font-size: large;
     }
 </style>
 </head>
@@ -253,28 +257,27 @@
       <div class="header-title">
         <h1><span class="badge">FlaskCon <br><p style="text-align: right; font-size: 20px; color: #f17808;">2020</p></span></h1>
       </div>
-      <hr />
-      <div class="row text-center">
+      <div class="row text-center bg-light" style="padding: 15px; border-radius: 15px">
         <div class="countdown">
+          <span><u>Event starts in</u></span>
           <h4>
             <div class="row">
-              <div class="col-md-auto">
-                <span id="cdown-days" class="cdown cdown-days"></span><br/>days
+              <div class="col">
+                <span id="cdown-days" class="cdown cdown-days badge"></span><br/>days
               </div>
-              <div class="col-md-auto">
-                <span id="cdown-hours" class="cdown cdown-hours"></span><br/>hours
+              <div class="col">
+                <span id="cdown-hours" class="cdown cdown-hours badge"></span><br/>hours
               </div>
-              <div class="col-md-auto">
-                <span id="cdown-minutes" class="cdown cdown-minutes"></span><br/>minutes
+              <div class="col">
+                <span id="cdown-minutes" class="cdown cdown-minutes badge"></span><br/>minutes
               </div>
-              <div class="col-md-auto">
-                <span id="cdown-seconds" class="cdown cdown-seconds"></span><br/>seconds
+              <div class="col">
+                <span id="cdown-seconds" class="cdown cdown-seconds badge"></span><br/>seconds
               </div>
             </div>
           </h4>
         </div>
       </div>
-      <hr />
       <div class="row">
         <div class="col event-info">
           <h3><strong>July 4th & 5th</strong></h3>
