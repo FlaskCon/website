@@ -8,8 +8,7 @@
     integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 <link rel="stylesheet" type="text/css" href="assets/css/style.css">
 <script src="https://kit.fontawesome.com/a076d05399.js"></script>
-<link href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap" rel="stylesheet">
-
+<link href="https://fonts.googleapis.com/css2?family=Patua+One&display=swap" rel="stylesheet">
 
 
 <!-- JS, Popper.js, and jQuery -->
@@ -44,16 +43,6 @@
 
     .badge {
         color: #202020 !important;
-    }
-
-    .parallax {
-        background-image: url('assets/img/flask_background.png');
-        width: 100%;
-        height: 400px;
-        background-attachment: fixed;
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
     }
 
     .fira-text {
@@ -126,10 +115,7 @@
         padding: 5px;
         margin-left: 10%;
         width: 100px;
-    }
-
-    .section{
-        margin-top: 10%;
+        padding-top: 15vh;
     }
 
     .section-info {
@@ -202,19 +188,24 @@
     }
 
     .countdown {
-        text-align: center !important;
-        font-family: 'Staatliches', cursive;
+        text-align: center;
+        font-family: 'Patua One', cursive;
     }
 
     .countdown .cdown {
         font-size: calc(4vw + 0.1vh + 0.1vmin);
-        padding: 20px;
+    }
+    
+    .countdown .badge{
+        border: 1px solid black;
+        padding: 10px 10px 0 10px;
+        border-radius: 10px;
+        width: 70px;
+        color: #202020 !important;
+        background-color: white;
     }
 
-    .event-info {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
+    .event-info{
+        font-size: large;
     }
 </style>
