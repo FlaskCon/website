@@ -204,11 +204,11 @@
     
     .countdown .badge{
         border: 1px solid black;
-        padding: 10px 10px 0 10px;
         border-radius: 10px;
-        width: 70px;
+        width: auto;
         color: #202020 !important;
         background-color: white;
+        text-align: center !important;
     }
 
     .event-info{
@@ -263,13 +263,14 @@
       <div class="header-title">
         <h1><span class="badge">FlaskCon <br><p style="text-align: right; font-size: 20px; color: #f17808;">2020</p></span></h1>
       </div>
-      <div class="row text-center bg-light" style="padding: 15px; border-radius: 15px">
+      <div class="row text-center bg-light" style="border-radius: 15px">
         <div class="countdown">
           <span><u>Event starts in</u></span>
           <h4>
             <div class="row">
               <div class="col">
-                <span id="cdown-days" class="cdown cdown-days badge"></span><br/>days
+                <span id="cdown-days" class="cdown cdown-days badge"></span>
+                <br/>days
               </div>
               <div class="col">
                 <span id="cdown-hours" class="cdown cdown-hours badge"></span><br/>hours
