@@ -2,37 +2,58 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta charset="utf-8">
 
-<link rel="shortcut icon" href="assets/img/FlaskCon_Logo.png" type="favicon/ico"/>
+<link rel="shortcut icon" href="assets/img/FlaskCon_Logo.png" type="favicon/ico" />
 <!-- CSS only -->
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
-      integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 <link rel="stylesheet" type="text/css" href="assets/css/style.css">
 <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap" rel="stylesheet">
+
 
 
 <!-- JS, Popper.js, and jQuery -->
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-        crossorigin="anonymous"></script>
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-        crossorigin="anonymous"></script>
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
-        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
-        crossorigin="anonymous"></script>
+    integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+    crossorigin="anonymous"></script>
 <link href="https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap" rel="stylesheet">
 
 <style type="text/css">
     .header {
-        background-image: url('assets/img/flask_background.png');
-        background-attachment: fixed;
-        background-size: cover;
-        background-position: center;
-        -webkit-filter: grayscale(50%); /* Safari 6.0 - 9.0 */
-        filter: grayscale(50%);
-        /*height: 500px;*/
+        color: #202020;
+        background-color: white;
         height: 100%;
         min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .header-title .badge {
+        color: white;
+        font-size: calc(3vw + 1vh + 1vmin);
+        margin: 10px;
+        transform: rotate(-5deg) scale(2);
+    }
+
+    .badge {
+        color: #202020 !important;
+    }
+
+    .parallax {
+        background-image: url('assets/img/flask_background.png');
+        width: 100%;
+        height: 400px;
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
     }
 
     .fira-text {
@@ -58,17 +79,15 @@
         color: white;
     }
 
-    .flask-nav {
-        background: rgb(231, 20, 20) !important;
-        background: radial-gradient(circle, rgba(231, 20, 20, 1) 0%, rgba(241, 120, 8, 1) 36%, rgba(69, 150, 28, 1) 100%) !important;
-    }
-
     .navbar {
         transition: top 0.3s;
+        margin-bottom: 50px;
+        background-color: white;
+        margin-bottom: 50px;
     }
 
     .flask-nav-item .flask-nav-text {
-        color: white;
+        color: #202020;
         font-weight: bold;
     }
 
@@ -78,12 +97,10 @@
 
     a {
         text-decoration: inherit;
-    !important;
     }
 
     a:hover {
         text-decoration: inherit;
-    !important;
     }
 
     .submit-talk {
@@ -111,7 +128,8 @@
         width: 100px;
     }
 
-    .section-title h2 {
+    .section{
+        margin-top: 10%;
     }
 
     .section-info {
@@ -160,28 +178,7 @@
 
     body {
         overflow-x: hidden !important;
-
-    }
-
-    .scroll-able {
-        overflow-y: scroll;
-        scrollbar-width: none; /* Firefox */
-        -ms-overflow-style: none; /* Internet Explorer 10+ */
-    }
-
-    .scroll-able::-webkit-scrollbar { /* WebKit */
-        width: 0;
-        height: 0;
-    }
-
-    .scroll-content {
-        max-width: 100%;
-        min-width: 500px;
-    }
-
-    .scroll-content-main {
-        max-width: 100%;
-        min-width: 1000px;
+        font-family: 'Fira Sans', sans-serif;
     }
 
     #goTop {
@@ -204,4 +201,20 @@
         background-color: #555;
     }
 
+    .countdown {
+        text-align: center !important;
+        font-family: 'Staatliches', cursive;
+    }
+
+    .countdown .cdown {
+        font-size: calc(4vw + 0.1vh + 0.1vmin);
+        padding: 20px;
+    }
+
+    .event-info {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
 </style>

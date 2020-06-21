@@ -1,22 +1,17 @@
 <div class="section-title" id="organisers">
     <h2>Organisers</h2>
 </div>
-<div style="overflow-x: scroll" class="scroll-able">
-    <div style="" class="scroll-content">
-        
-        <div class="container">
-            <div class="section-info">
-                {%for organiser in ORGANISERS%}
-                    <div class="card organiser-card">
-                        <a href="{{organiser['url']}}">
-                            <div title="{{organiser['name']}}">
-                                <img width="100" height="100" src="{{organiser['logo']}}">
-                            </div>
-                        </a>
+<div class="row">
+    <div class="section-info">
+        {%for organiser in ORGANISERS%}
+            <div class="card organiser-card">
+                <a href="{{organiser['url']}}">
+                    <div title="{{organiser['name']}}">
+                        <img width="100" height="100" src="{{organiser['logo']}}">
                     </div>
-                    
-                {%endfor%}
+                </a>
             </div>
-        </div>
+            
+        {%endfor%}
     </div>
 </div>

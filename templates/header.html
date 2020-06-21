@@ -1,36 +1,34 @@
 <button type="button" id="goTop" onclick="return goTop()"><i class="fa fa-arrow-up"></i></button>
 <header class="jumbotron header-page jumbotron-fluid header">
-  <div class="row">
-    <div class="col-sm-6">
-      <div class="card" style="background-color: transparent; border: none; outline: none;">
-        <div class="card-body text-center">
-          <img src="/assets/img/FlaskCon_Logo.png" style="width: 350px" class="img-fluid" />
+  <div class="row" style="background-color: transparent; border: none; outline: none; padding-top: 20vh">
+    <div class="col text-center fira-text">
+      <div class="header-title">
+        <h1><span class="badge">FlaskCon <br><p style="text-align: right; font-size: 20px; color: #f17808;">2020</p></span></h1>
+      </div>
+      <hr />
+      <div class="row text-center">
+        <div class="countdown">
+          <h4>
+            <div class="row">
+              <div class="col-md-auto">
+                <span id="cdown-days" class="cdown cdown-days"></span><br/>days
+              </div>
+              <div class="col-md-auto">
+                <span id="cdown-hours" class="cdown cdown-hours"></span><br/>hours
+              </div>
+              <div class="col-md-auto">
+                <span id="cdown-minutes" class="cdown cdown-minutes"></span><br/>minutes
+              </div>
+              <div class="col-md-auto">
+                <span id="cdown-seconds" class="cdown cdown-seconds"></span><br/>seconds
+              </div>
+            </div>
+          </h4>
         </div>
       </div>
-    </div>
-    <div class="col-sm-6">
-      <div class="card" style="background-color: transparent; border: none; outline: none; color: white;">
-        <div class="card-body fira-text">
-          <hr />
-          <div class="countdown">
-            <h4>
-              <div class="row">
-                <div class="col-auto">
-                  <span id="cdown-days"></span>
-                </div>
-                <div class="col-auto">
-                  <span id="cdown-hours"></span>
-                </div>
-                <div class="col-auto">
-                  <span id="cdown-minutes"></span>
-                </div>
-                <div class="col-auto">
-                  <span id="cdown-seconds"></span>
-                </div>
-              </div>
-            </h4>
-          </div>
-          <hr />
+      <hr />
+      <div class="row">
+        <div class="col event-info">
           <h3><strong>July 4th & 5th</strong></h3>
           <h5><i class="fa fa-clock"></i> 9:00 - 14:00 GMT</h5>
           <h5><i class="fa fa-map-marker"></i> Remote</h5>
@@ -39,6 +37,7 @@
     </div>
   </div>
 </header>
+<div class="parallax"></div>
 
 
 <script>
@@ -61,20 +60,20 @@
     var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
     // Display the result in the element with id="demo"
-    document.getElementById("cdown-days").innerHTML = days + "<br/>days ";
-    document.getElementById("cdown-hours").innerHTML = hours + "<br/>hours ";
-    document.getElementById("cdown-minutes").innerHTML = minutes + "<br/>minutes ";
-    document.getElementById("cdown-seconds").innerHTML = seconds + "<br/>seconds ";
+    document.querySelector(".cdown-days").innerHTML = days;
+    document.querySelector(".cdown-hours").innerHTML = hours;
+    document.querySelector(".cdown-minutes").innerHTML = minutes;
+    document.querySelector(".cdown-seconds").innerHTML = seconds;
 
     //  document.getElementById("cdown").innerHTML = days + "<br/>d " + hours + "h " + minutes + "m " + seconds + "s ";
 
     // If the count down is finished, write some text
     if (distance < 0) {
       clearInterval(x);
-      document.getElementById("cdown-days").innerHTML = "EXPIRED";
-      document.getElementById("cdown-hours").innerHTML = "";
-      document.getElementById("cdown-minutes").innerHTML = "";
-      document.getElementById("cdown-seconds").innerHTML = "";
+      document.querySelector(".cdown-days").innerHTML = "EXPIRED";
+      document.querySelector(".cdown-hours").innerHTML = "";
+      document.querySelector(".cdown-minutes").innerHTML = "";
+      document.querySelector(".cdown-seconds").innerHTML = "";
     }
   }, 1000);
 
