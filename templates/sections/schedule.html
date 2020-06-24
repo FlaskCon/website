@@ -124,8 +124,24 @@
             });
             //$('[data-toggle="tooltip"]').tooltip()
             var interviews = [
-                { "name": "", "project": "", "about": "" },
+                { 
+                    "name": "Andrew Schonfeld", 
+                    "project": "D-Tale", 
+                    "about": "" 
+                },
+                { 
+                    "name": "Abhishek Kaushik", 
+                    "project": "Creatorlist", 
+                    "about": "" 
+                }
             ];
+
+            for (var i = interviews.length - 1; i >= 0; i--) {
+                var interview = interviews[i];
+                $('#interviews').append(`
+                    <p>(15mins) ${interview['project']} interview with ${interview['name']}</p>
+                    `);
+            }
         });
     </script>
 
@@ -151,7 +167,9 @@
                 <div class="tab-pane fade show active" id="pills-day-1" role="tabpanel" aria-labelledby="pills-day-1-tab">
                     <div class="row">
                         <div class="col-md-9">
-                            <p>Community builds interviews disclosed soon!
+                            <p>3pm GMT</p>
+                            <p id="interviews">
+                                
                             </p>
                         </div>
                     </div>

@@ -442,8 +442,37 @@
 
         FlaskCon is a community driven Flask event intended for speakers and attendees all over the world to
         participate in technical and evangelical sessions related to Flask. Feel free to submit one using
-        the button above! They will be reviewed by an awesome team composed of Pallets members,
-        Flask maintainers and more...
+        the button above! They review team listed below was composed of Pallets members,
+        Flask maintainers and more.
+    </div>
+</div>
+<style type="text/css">
+    .socialmedia-youtube, .socialmedia-twitter{
+        font-size: 55px;
+        color: black;
+        margin-right: 20px;
+    }
+    .socialmedia-twitter:hover{
+        color: #156ea5 !important;
+    }
+    .socialmedia-youtube:hover{
+        color: #c31919 !important;
+    }
+</style>
+<div class="section-title" id="about">
+    <h2>Social Media</h2>
+</div>
+<div class="row" >
+    <div class="section-info fira-text">
+  
+        <a class="" href="https://twitter.com/flaskcon">
+            <i style="color:#1DA1F2;" class="socialmedia-twitter fab fa-twitter"></i>
+        </a>
+        
+        <a class="" href="https://www.youtube.com/channel/UC3QC5pASs8v5YVxKwJDtZeQ">
+            <i style="color: red" class="socialmedia-youtube fab fa-youtube"></i>
+        </a>
+        
     </div>
 </div>
 <div class="section-title" id="schedule_section">
@@ -572,8 +601,24 @@
             });
             //$('[data-toggle="tooltip"]').tooltip()
             var interviews = [
-                { "name": "", "project": "", "about": "" },
+                { 
+                    "name": "Andrew Schonfeld", 
+                    "project": "D-Tale", 
+                    "about": "" 
+                },
+                { 
+                    "name": "Abhishek Kaushik", 
+                    "project": "Creatorlist", 
+                    "about": "" 
+                }
             ];
+
+            for (var i = interviews.length - 1; i >= 0; i--) {
+                var interview = interviews[i];
+                $('#interviews').append(`
+                    <p>(15mins) ${interview['project']} interview with ${interview['name']}</p>
+                    `);
+            }
         });
     </script>
 
@@ -599,7 +644,9 @@
                 <div class="tab-pane fade show active" id="pills-day-1" role="tabpanel" aria-labelledby="pills-day-1-tab">
                     <div class="row">
                         <div class="col-md-9">
-                            <p>Community builds interviews disclosed soon!
+                            <p>3pm GMT</p>
+                            <p id="interviews">
+                                
                             </p>
                         </div>
                     </div>
@@ -666,7 +713,7 @@
         
         <div class="col-md-3">
             <div class="card organiser-card" title="David">
-                <img src="/assets/img/profile-pic/davidlord.jpg" class="organiser-logo card-img-top">
+                <img src="" class="organiser-logo card-img-top">
                 <div class="card-body">
                     <p class="reviewer-text">David</p>
                     <p>(Pallets)</p>
@@ -676,7 +723,7 @@
         
         <div class="col-md-3">
             <div class="card organiser-card" title="Adam Englander">
-                <img src="/assets/img/profile-pic/unknown.jpg" class="organiser-logo card-img-top">
+                <img src="" class="organiser-logo card-img-top">
                 <div class="card-body">
                     <p class="reviewer-text">Adam Englander</p>
                     <p>(Werkzeug Maintainer)</p>
@@ -686,7 +733,7 @@
         
         <div class="col-md-3">
             <div class="card organiser-card" title="Grey Li">
-                <img src="/assets/img/profile-pic/unknown.jpg" class="organiser-logo card-img-top">
+                <img src="" class="organiser-logo card-img-top">
                 <div class="card-body">
                     <p class="reviewer-text">Grey Li</p>
                     <p>(Flask Maintainer)</p>
@@ -696,7 +743,7 @@
         
         <div class="col-md-3">
             <div class="card organiser-card" title="Julien Demoor">
-                <img src="/assets/img/profile-pic/unknown.jpg" class="organiser-logo card-img-top">
+                <img src="" class="organiser-logo card-img-top">
                 <div class="card-body">
                     <p class="reviewer-text">Julien Demoor</p>
                     <p>(PyMUG)</p>
@@ -706,7 +753,7 @@
         
         <div class="col-md-3">
             <div class="card organiser-card" title="Miguel Grinberg">
-                <img src="/assets/img/profile-pic/unknown.jpg" class="organiser-logo card-img-top">
+                <img src="" class="organiser-logo card-img-top">
                 <div class="card-body">
                     <p class="reviewer-text">Miguel Grinberg</p>
                     <p>(Flask Maintainer, PythonIreland)</p>
@@ -716,7 +763,7 @@
         
         <div class="col-md-3">
             <div class="card organiser-card" title="Ali-Akber Saifee">
-                <img src="/assets/img/profile-pic/unknown.jpg" class="organiser-logo card-img-top">
+                <img src="" class="organiser-logo card-img-top">
                 <div class="card-body">
                     <p class="reviewer-text">Ali-Akber Saifee</p>
                     <p>(Flask-limiter)</p>
@@ -726,7 +773,7 @@
         
         <div class="col-md-3">
             <div class="card organiser-card" title="Steven Loria">
-                <img src="/assets/img/profile-pic/unknown.jpg" class="organiser-logo card-img-top">
+                <img src="" class="organiser-logo card-img-top">
                 <div class="card-body">
                     <p class="reviewer-text">Steven Loria</p>
                     <p>(Marshmallow & Flask-marshmallow)</p>
@@ -736,7 +783,7 @@
         
         <div class="col-md-3">
             <div class="card organiser-card" title="Namgyal Brisson">
-                <img src="/assets/img/profile-pic/unknown.jpg" class="organiser-logo card-img-top">
+                <img src="" class="organiser-logo card-img-top">
                 <div class="card-body">
                     <p class="reviewer-text">Namgyal Brisson</p>
                     <p>(PyMUG)</p>
@@ -754,7 +801,7 @@
         
         <div class="col-md-3">
             <div class="card organiser-card">
-                <a href="https://www.pymug.com">
+                <a href="https://pymug.com">
                     <div title="PyMUG">
                         <img width="100" height="100" src="/assets/img/pymug_new.svg" class="organiser-logo">
                     </div>
