@@ -2,17 +2,17 @@
     <h2>Reviewers</h2>
 </div>
 <div class="row">
-    <div class="section-info card-column">
+    <div class="section-info card-group">
         {%for reviewer in REVIEWERS%}
-            <div class="card organiser-card text-center">
+        <div class="col-md-3">
+            <div class="card organiser-card" title="{{reviewer[0]}}">
                 <img src="{{reviewer[2]}}" class="organiser-logo card-img-top">
                 <div class="card-body">
-                    <div title="{{reviewer[0]}}">
-                        <p class="reviewer-text">{{reviewer[0]}}</p>
-                        <p>{{reviewer[1]}}</p>
-                    </div>
+                    <p class="reviewer-text">{{reviewer[0]}}</p>
+                    <p>{{reviewer[1]}}</p>
                 </div>
             </div>
+        </div>
         {%endfor%}
     </div>
 </div>

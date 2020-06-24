@@ -2,8 +2,9 @@
     <h2>Organisers</h2>
 </div>
 <div class="row">
-    <div class="section-info">
+    <div class="section-info card-group">
         {%for organiser in ORGANISERS%}
+        <div class="col-md-3">
             <div class="card organiser-card">
                 <a href="{{organiser['url']}}">
                     <div title="{{organiser['name']}}">
@@ -11,6 +12,7 @@
                     </div>
                 </a>
             </div>
+        </div>
             
         {%endfor%}
     </div>
