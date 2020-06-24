@@ -5,14 +5,14 @@ SITE_NAME = 'FlaskCon'
 CFP_LINK = 'https://sessionize.com/flaskcon'
 
 REVIEWERS = [
-    ['David', '(Pallets)'],
-    ['Adam Englander', '(Werkzeug Maintainer)'],
-    ['Grey Li', '(Flask Maintainer)'],
-    ['Julien Demoor', '(PyMUG)'],
-    ['Miguel Grinberg', '(Flask Maintainer, PythonIreland)'],
-    ['Ali-Akber Saifee', '(Flask-limiter)'],
-    ['Steven Loria', '(Marshmallow & Flask-marshmallow)'],
-    ['Namgyal Brisson', '(PyMUG)']
+    ['David', '(Pallets)', '/assets/img/profile-pic/davidlord.jpg'],
+    ['Adam Englander', '(Werkzeug Maintainer)', '/assets/img/profile-pic/unknown.jpg'],
+    ['Grey Li', '(Flask Maintainer)', '/assets/img/profile-pic/unknown.jpg'],
+    ['Julien Demoor', '(PyMUG)', '/assets/img/profile-pic/unknown.jpg'],
+    ['Miguel Grinberg', '(Flask Maintainer, PythonIreland)', '/assets/img/profile-pic/unknown.jpg'],
+    ['Ali-Akber Saifee', '(Flask-limiter)', '/assets/img/profile-pic/unknown.jpg'],
+    ['Steven Loria', '(Marshmallow & Flask-marshmallow)', '/assets/img/profile-pic/unknown.jpg'],
+    ['Namgyal Brisson', '(PyMUG)', '/assets/img/profile-pic/unknown.jpg']
 ]
 
 ORGANISERS = [

@@ -15,7 +15,8 @@
 
 
 <!-- JS, Popper.js, and jQuery -->
-<script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"
+    integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
     integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
     crossorigin="anonymous"></script>
@@ -148,8 +149,13 @@
         font-size: 25px;
     }
 
+    .card {
+        background-color: transparent !important;
+        border: none !important;
+        outline: none !important;
+    }
+
     .organiser-card {
-        border: 5px solid gray;
         display: inline-block;
         margin: 5px;
         padding: 5px;
@@ -157,12 +163,19 @@
         background-color: #faf9f5;
     }
 
+    .organiser-logo {
+        border-radius: 50%;
+        height: 100px !important;
+        width: 100px !important;
+    }
+
     .flask-footer {
         padding: 10px;
         background-color: gray;
         color: white;
     }
-    .flask-footer > a{
+
+    .flask-footer>a {
         color: white;
     }
 
@@ -199,9 +212,12 @@
     .countdown .cdown {
         font-size: calc(4vw + 0.1vh + 0.1vmin);
     }
-    
-    .countdown .badge{
-        border: 1px solid black;
+
+    .countdown .badge {
+        -webkit-box-shadow: 0px 0px 5px 3px rgba(0, 0, 0, 0.15);
+        -moz-box-shadow: 0px 0px 5px 3px rgba(0, 0, 0, 0.15);
+        box-shadow: 0px 0px 5px 3px rgba(0, 0, 0, 0.15);
+
         border-radius: 10px;
         width: auto;
         color: #202020 !important;
@@ -209,36 +225,39 @@
         text-align: center !important;
     }
 
-    .event-info{
+    .event-info {
         font-size: large;
     }
 
-    .counter{
+    .counter {
         width: 40px;
         height: 40px;
-        border-radius: 50%;
-        background-color: #6cc33b;
-        color: white;
+        color: #6cc33b;
+        padding: 15px;
         padding-left: 5px;
         font-size: 20px;
         margin-bottom: 10px;
     }
-    .talk_title{
+
+    .talk_title {
         font-size: 30px;
         font-weight: bold;
         margin-bottom: 0;
         padding-bottom: 0;
     }
-    .talk{
+
+    .talk {
         margin-top: 20px;
     }
-    .schedule_time{
+
+    .schedule_time {
         color: gray;
         font-size: 15px;
         margin: 0;
         padding: 0;
     }
-    .bio{
+
+    .bio {
         padding-left: 10px;
         padding-right: 10px;
         display: inline-block;
@@ -246,13 +265,26 @@
         color: white;
         border-radius: 3px;
     }
-    .bio:hover{
+
+    .bio:hover {
         background-color: #4a9df0;
     }
-    .day{
+
+    .day {
         border-bottom: 5px solid black;
         margin-bottom: 50px;
         margin-top: 50px;
+    }
+
+    .schedule_section ::-webkit-scrollbar {
+        width: 10px;
+        background: transparent;
+    }
+
+    /* Track */
+    .schedule_section ::-webkit-scrollbar-thumb {
+        background: #f17808;
+        border-radius: 20px;
     }
 </style>
 </head>
@@ -306,7 +338,7 @@
       <div class="header-title">
         <h1><span class="badge">FlaskCon <br><p style="text-align: right; font-size: 20px; color: #f17808;">2020</p></span></h1>
       </div>
-      <div class="row text-center bg-light" style="border-radius: 15px">
+      <div class="row text-center" style="border-radius: 15px">
         <div class="countdown">
           <span><u>Event starts in</u></span>
           <h4>
@@ -415,104 +447,163 @@
 <div class="section-title" id="schedule_section">
     <h2>Schedule</h2>
 </div>
-<div class="row" style="overflow-x: scroll">
-    <div class="section-info fira-text" style="width: 1000px;">
-        <!--
-        <script type="text/javascript" src="https://sessionize.com/api/v2/roir1aty/view/Sessions"></script>
-    -->
+<style>
+    ul.timeline {
+        list-style-type: none;
+        position: relative;
+    }
+
+    ul.timeline:before {
+        content: ' ';
+        background: #d4d9df;
+        display: inline-block;
+        position: absolute;
+        left: 29px;
+        width: 2px;
+        height: 100%;
+        z-index: 400;
+    }
+
+    ul.timeline>li {
+        margin: 20px 0;
+        padding-left: 20px;
+    }
+
+    ul.timeline>li:before {
+        content: ' ';
+        background: white;
+        display: inline-block;
+        position: absolute;
+        border-radius: 50%;
+        border: 3px solid #22c0e8;
+        left: 20px;
+        width: 20px;
+        height: 20px;
+        z-index: 400;
+    }
+</style>
+<div class="row schedule_section">
     <script type="text/javascript">
-$(document).ready(function () {
-    $('body').tooltip({
-    selector: '.bio'
-});
-$.getJSON( "https://sessionize.com/api/v2/hfvabfol/view/All", function( data ) {
-    var counter = 0;
-    $.each( data['sessions'], function() {
-    console.log("data");
-    console.log(data);
-        var startTime = data['sessions'][counter]['startsAt'];
-        var endTime = data['sessions'][counter]['endsAt'];
-        var title = data['sessions'][counter]['title'];
-        var description = data['sessions'][counter]['description'];
-        var speaker_id = data['sessions'][counter]['speakers'][0];
-        console.log(speaker_id);
-        var s_i = 0;
-        for (var i = data['speakers'].length - 1; i >= 0; i--) {
-            speaker_data = data['speakers'][i];
-            if (speaker_data['id'] == speaker_id){
-                speaker = speaker_data;
-                s_i = i;
-                break;
-            }
-        }
-        var startT = new Date(startTime);
-        var startT_hour = startT.getHours();
-        if (startT_hour === '0'){
-            startT_hour = '00';
-        }
-        var endT = new Date(endTime);
-        var endT_hour = endT.getHours();
-        if (endT_hour === '0'){
-            endT_hour = '00';
-        }
-        var fullName = data['speakers'][s_i]['fullName'];
-        var bio = data['speakers'][s_i]['bio'];
-        var session = `
-            <p class="counter">${counter+1}</p>
-            <div>
-                
-                <p class="talk_title">${title}</span></p>
-                <div class="schedule_time">
-                    ${startT.toLocaleTimeString('en-US')} GMT to 
-                    ${endT.toLocaleTimeString('en-US')} GMT</div>
-                <div class="talk">
-                <p>
-                <span class="bio" data-toggle="tooltip" data-placement="top" title="${bio}"><i class="fa fa-info"></i></span>
-                ${fullName} 
-                </p>
-                
-                
-                <p>${description}</p>
-                
-            </div>
-            </div>
-            <hr>
-            <div>QnA (5 mins)</div>
-            <hr>
-            <div>Break (5 mins)</div>
-            <hr>
+        $(document).ready(function () {
+            $('body').tooltip({
+                selector: '.bio'
+            });
+            $.getJSON("https://sessionize.com/api/v2/hfvabfol/view/All", function (data) {
+                var counter = 0;
+                $.each(data['sessions'], function () {
+                    var startTime = data['sessions'][counter]['startsAt'];
+                    var endTime = data['sessions'][counter]['endsAt'];
+                    var title = data['sessions'][counter]['title'];
+                    var description = data['sessions'][counter]['description'];
+                    var speaker_id = data['sessions'][counter]['speakers'][0];
+                    var s_i = 0;
+                    for (var i = data['speakers'].length - 1; i >= 0; i--) {
+                        speaker_data = data['speakers'][i];
+                        if (speaker_data['id'] == speaker_id) {
+                            speaker = speaker_data;
+                            s_i = i;
+                            break;
+                        }
+                    }
+                    var startT = new Date(startTime);
+                    var startT_hour = startT.getHours();
+                    if (startT_hour === '0') {
+                        startT_hour = '00';
+                    }
+                    var endT = new Date(endTime);
+                    var endT_hour = endT.getHours();
+                    if (endT_hour === '0') {
+                        endT_hour = '00';
+                    }
+                    var fullName = data['speakers'][s_i]['fullName'];
+                    var bio = data['speakers'][s_i]['bio'];
+                    if (startT.getDate() == 4) {
+                        var session = `
+                        <li>
+                            <p target="_blank" class="talk_title"><span class="counter">${counter + 1}</span>${title}</p>
+                            <br />
+                            <p class="schedule_time">
+                                ${startT.toLocaleTimeString('en-US')} GMT - ${endT.toLocaleTimeString('en-US')} GMT
+                            </p>
+                            <h5>
+                                <span class="bio" data-toggle="tooltip" data-placement="top" title="${bio}"><i class="fa fa-info"></i></span>
+                                ${fullName}
+                            </h5>
+                            <p>
+                                ${description}
+                            </p>
+                            <hr />
+                            <div>QnA (5 mins)</div>
+                            <hr />
+                            <div>Break (5 mins)</div>
+                            <hr />
+                        </li>
+                    `
+                    } else {
+                        var session2 = `
+                        <li>
+                            <p target="_blank" class="talk_title" href="https://www.totoprayogo.com/#"><span class="counter">${counter + 1}</span>${title}</p>
+                            <br />
+                            <p href="#" class="schedule_time">
+                                ${startT.toLocaleTimeString('en-US')} GMT - ${endT.toLocaleTimeString('en-US')} GMT
+                            </p>
+                            <h5>
+                                <span class="bio" data-toggle="tooltip" data-placement="top" title="${bio}"><i class="fa fa-info"></i></span>
+                                ${fullName}
+                            </h5>
+                            <p>
+                                ${description}
+                            </p>
+                            <hr />
+                            <div>QnA (5 mins)</div>
+                            <hr />
+                            <div>Break (5 mins)</div>
+                            <hr />
+                        </li>
+                    `
+                    };
+                    counter++;
+                    $('.day-1').append(session);
+                    $('.day-2').append(session2);
+                });
 
-        `;
-        if (counter+1 === 9){
-            
-            $('#schedule').append(`
-                <div class="day">
-                    July 5
-                </div>
-            `);
-        }
-        counter++;
-        $('#schedule').append(session);
-    });
-
-});
-    //$('[data-toggle="tooltip"]').tooltip()
-    var interviews = [
-        {"name": "", "project":"", "about":""},
-    ];
-    });
+            });
+            //$('[data-toggle="tooltip"]').tooltip()
+            var interviews = [
+                { "name": "", "project": "", "about": "" },
+            ];
+        });
     </script>
-    <div id="schedule">
-        <div class="day">
-            July 3
-        </div>
-        <div>
-            Community builds interviews disclosed soon!
-        </div>
-        <div class="day">
-            July 4
+
+    <div class="col-md-1">
+    </div>
+    <div class="col-md-2" style="display: flex; align-items:center;">
+        <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+            <a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab"
+                aria-controls="v-pills-home" aria-selected="true">July 3<sup>rd</sup></a>
+            <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab"
+                aria-controls="v-pills-profile" aria-selected="false">July 4<sup>th</sup></a>
         </div>
     </div>
+    <div class="col-md-9">
+        <div class="tab-content" id="v-pills-tabContent" style="height: 70vh; overflow-y: scroll; overflow-x: hidden; border: 1px solid #202020; border-left: none;">
+            <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
+                <div class="row">
+                    <div class="col-md-9">
+                        <ul class="timeline day-1">
+                        </ul>
+                    </div>
+                </div>        
+            </div>
+            <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
+                <div class="row">
+                    <div class="col-md-9">
+                        <ul class="timeline day-2">
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 <div class="section-title" id="reviewers">
@@ -521,52 +612,84 @@ $.getJSON( "https://sessionize.com/api/v2/hfvabfol/view/All", function( data ) {
 <div class="row">
     <div class="section-info">
         
-            <div>
-                <div class="bullet"></div> 
-                <div class="reviewer-text">David</div>
-                <div>(Pallets)</div>
+            <div class="card organiser-card text-center">
+                <img src="/assets/img/profile-pic/davidlord.jpg" class="organiser-logo card-img-top">
+                <div class="card-body">
+                    <div title="David">
+                        <div class="reviewer-text">David</div>
+                        <div>(Pallets)</div>
+                    </div>
+                </div>
             </div>
         
-            <div>
-                <div class="bullet"></div> 
-                <div class="reviewer-text">Adam Englander</div>
-                <div>(Werkzeug Maintainer)</div>
+            <div class="card organiser-card text-center">
+                <img src="/assets/img/profile-pic/unknown.jpg" class="organiser-logo card-img-top">
+                <div class="card-body">
+                    <div title="Adam Englander">
+                        <div class="reviewer-text">Adam Englander</div>
+                        <div>(Werkzeug Maintainer)</div>
+                    </div>
+                </div>
             </div>
         
-            <div>
-                <div class="bullet"></div> 
-                <div class="reviewer-text">Grey Li</div>
-                <div>(Flask Maintainer)</div>
+            <div class="card organiser-card text-center">
+                <img src="/assets/img/profile-pic/unknown.jpg" class="organiser-logo card-img-top">
+                <div class="card-body">
+                    <div title="Grey Li">
+                        <div class="reviewer-text">Grey Li</div>
+                        <div>(Flask Maintainer)</div>
+                    </div>
+                </div>
             </div>
         
-            <div>
-                <div class="bullet"></div> 
-                <div class="reviewer-text">Julien Demoor</div>
-                <div>(PyMUG)</div>
+            <div class="card organiser-card text-center">
+                <img src="/assets/img/profile-pic/unknown.jpg" class="organiser-logo card-img-top">
+                <div class="card-body">
+                    <div title="Julien Demoor">
+                        <div class="reviewer-text">Julien Demoor</div>
+                        <div>(PyMUG)</div>
+                    </div>
+                </div>
             </div>
         
-            <div>
-                <div class="bullet"></div> 
-                <div class="reviewer-text">Miguel Grinberg</div>
-                <div>(Flask Maintainer, PythonIreland)</div>
+            <div class="card organiser-card text-center">
+                <img src="/assets/img/profile-pic/unknown.jpg" class="organiser-logo card-img-top">
+                <div class="card-body">
+                    <div title="Miguel Grinberg">
+                        <div class="reviewer-text">Miguel Grinberg</div>
+                        <div>(Flask Maintainer, PythonIreland)</div>
+                    </div>
+                </div>
             </div>
         
-            <div>
-                <div class="bullet"></div> 
-                <div class="reviewer-text">Ali-Akber Saifee</div>
-                <div>(Flask-limiter)</div>
+            <div class="card organiser-card text-center">
+                <img src="/assets/img/profile-pic/unknown.jpg" class="organiser-logo card-img-top">
+                <div class="card-body">
+                    <div title="Ali-Akber Saifee">
+                        <div class="reviewer-text">Ali-Akber Saifee</div>
+                        <div>(Flask-limiter)</div>
+                    </div>
+                </div>
             </div>
         
-            <div>
-                <div class="bullet"></div> 
-                <div class="reviewer-text">Steven Loria</div>
-                <div>(Marshmallow & Flask-marshmallow)</div>
+            <div class="card organiser-card text-center">
+                <img src="/assets/img/profile-pic/unknown.jpg" class="organiser-logo card-img-top">
+                <div class="card-body">
+                    <div title="Steven Loria">
+                        <div class="reviewer-text">Steven Loria</div>
+                        <div>(Marshmallow & Flask-marshmallow)</div>
+                    </div>
+                </div>
             </div>
         
-            <div>
-                <div class="bullet"></div> 
-                <div class="reviewer-text">Namgyal Brisson</div>
-                <div>(PyMUG)</div>
+            <div class="card organiser-card text-center">
+                <img src="/assets/img/profile-pic/unknown.jpg" class="organiser-logo card-img-top">
+                <div class="card-body">
+                    <div title="Namgyal Brisson">
+                        <div class="reviewer-text">Namgyal Brisson</div>
+                        <div>(PyMUG)</div>
+                    </div>
+                </div>
             </div>
         
     </div>
@@ -580,7 +703,7 @@ $.getJSON( "https://sessionize.com/api/v2/hfvabfol/view/All", function( data ) {
             <div class="card organiser-card">
                 <a href="https://pymug.com">
                     <div title="PyMUG">
-                        <img width="100" height="100" src="/assets/img/pymug_new.svg">
+                        <img width="100" height="100" src="/assets/img/pymug_new.svg" class="organiser-logo">
                     </div>
                 </a>
             </div>
@@ -589,7 +712,7 @@ $.getJSON( "https://sessionize.com/api/v2/hfvabfol/view/All", function( data ) {
             <div class="card organiser-card">
                 <a href="https://python.ie/">
                     <div title="PythonIreland">
-                        <img width="100" height="100" src="/assets/img/pyie.png">
+                        <img width="100" height="100" src="/assets/img/pyie.png" class="organiser-logo">
                     </div>
                 </a>
             </div>
@@ -598,7 +721,7 @@ $.getJSON( "https://sessionize.com/api/v2/hfvabfol/view/All", function( data ) {
             <div class="card organiser-card">
                 <a href="https://bangalore.python.org.in/">
                     <div title="BangPypers">
-                        <img width="100" height="100" src="/assets/img/bangpypers.png">
+                        <img width="100" height="100" src="/assets/img/bangpypers.png" class="organiser-logo">
                     </div>
                 </a>
             </div>
@@ -607,7 +730,7 @@ $.getJSON( "https://sessionize.com/api/v2/hfvabfol/view/All", function( data ) {
             <div class="card organiser-card">
                 <a href="http://pythonnigeria.org/">
                     <div title="PythonNigeria">
-                        <img width="100" height="100" src="/assets/img/pynigeria.svg">
+                        <img width="100" height="100" src="/assets/img/pynigeria.svg" class="organiser-logo">
                     </div>
                 </a>
             </div>
@@ -616,7 +739,7 @@ $.getJSON( "https://sessionize.com/api/v2/hfvabfol/view/All", function( data ) {
             <div class="card organiser-card">
                 <a href="https://cn.pycon.org/en/index.html">
                     <div title="PyCon China">
-                        <img width="100" height="100" src="/assets/img/python_china.jpg">
+                        <img width="100" height="100" src="/assets/img/python_china.jpg" class="organiser-logo">
                     </div>
                 </a>
             </div>
@@ -625,7 +748,7 @@ $.getJSON( "https://sessionize.com/api/v2/hfvabfol/view/All", function( data ) {
             <div class="card organiser-card">
                 <a href="http://www.moscowpython.ru/">
                     <div title="PythonMoscow">
-                        <img width="100" height="100" src="/assets/img/python_moscow.png">
+                        <img width="100" height="100" src="/assets/img/python_moscow.png" class="organiser-logo">
                     </div>
                 </a>
             </div>
@@ -634,7 +757,7 @@ $.getJSON( "https://sessionize.com/api/v2/hfvabfol/view/All", function( data ) {
             <div class="card organiser-card">
                 <a href="https://py.amsterdam/">
                     <div title="PyAmsterdam">
-                        <img width="100" height="100" src="/assets/img/python_amsterdam.svg">
+                        <img width="100" height="100" src="/assets/img/python_amsterdam.svg" class="organiser-logo">
                     </div>
                 </a>
             </div>
@@ -643,7 +766,7 @@ $.getJSON( "https://sessionize.com/api/v2/hfvabfol/view/All", function( data ) {
             <div class="card organiser-card">
                 <a href="http://gilpug.gitlab.io/">
                     <div title="GilPug">
-                        <img width="100" height="100" src="/assets/img/GilPUG.jpg">
+                        <img width="100" height="100" src="/assets/img/GilPUG.jpg" class="organiser-logo">
                     </div>
                 </a>
             </div>
@@ -661,7 +784,7 @@ $.getJSON( "https://sessionize.com/api/v2/hfvabfol/view/All", function( data ) {
             <div class="card organiser-card">
                 <a href="https://discord.gg/python">
                     <div title="PythonDiscord">
-                        <img width="100" height="100" src="/assets/img/python_discord.jpg">
+                        <img width="100" height="100" class="organiser-logo" src="/assets/img/python_discord.jpg">
                     </div>
                 </a>
             </div>
@@ -670,7 +793,7 @@ $.getJSON( "https://sessionize.com/api/v2/hfvabfol/view/All", function( data ) {
             <div class="card organiser-card">
                 <a href="https://www.reddit.com/r/flask/">
                     <div title="r/Flask">
-                        <img width="100" height="100" src="/assets/img/flask.png">
+                        <img width="100" height="100" class="organiser-logo" src="/assets/img/flask.png">
                     </div>
                 </a>
             </div>

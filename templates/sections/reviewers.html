@@ -4,10 +4,14 @@
 <div class="row">
     <div class="section-info">
         {%for reviewer in REVIEWERS%}
-            <div>
-                <div class="bullet"></div> 
-                <div class="reviewer-text">{{reviewer[0]}}</div>
-                <div>{{reviewer[1]}}</div>
+            <div class="card organiser-card text-center">
+                <img src="{{reviewer[2]}}" class="organiser-logo card-img-top">
+                <div class="card-body">
+                    <div title="{{reviewer[0]}}">
+                        <div class="reviewer-text">{{reviewer[0]}}</div>
+                        <div>{{reviewer[1]}}</div>
+                    </div>
+                </div>
             </div>
         {%endfor%}
     </div>
