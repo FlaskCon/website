@@ -110,7 +110,9 @@
 
     .section-title {
         border: none;
-        border-bottom: 10px solid #f17808;
+        border-bottom: 10px solid transparent;
+        border-image: linear-gradient(to right, #f7c02b, #ee542e);
+        border-image-slice: 1;
         padding: 5px;
         margin-left: 10%;
         width: 100px;
@@ -280,7 +282,7 @@
 
     /* Track */
     .schedule_section ::-webkit-scrollbar-thumb {
-        background: #f17808;
+        background: #202020;
         border-radius: 20px;
     }
 </style>
