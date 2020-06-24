@@ -18,7 +18,7 @@ REVIEWERS = [
 ORGANISERS = [
     {"name": "PyMUG",
      "logo": "/assets/img/pymug_new.svg",
-     "url": "https://pymug.com"},
+     "url": "https://www.pymug.com"},
     {"name": "PythonIreland",
      "logo": "/assets/img/pyie.png",
      "url": "https://python.ie/"},
