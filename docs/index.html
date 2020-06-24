@@ -563,8 +563,8 @@
                     `
                     };
                     counter++;
-                    $('.day-1').append(session);
-                    $('.day-2').append(session2);
+                    $('.day-2').append(session);
+                    $('.day-3').append(session2);
                 });
 
             });
@@ -575,10 +575,59 @@
         });
     </script>
 
+    <div class="col" style="display: flex; align-items:center; justify-content: center; flex-direction: column">
+        <div class="row">
+            <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link active" id="pills-day-1-tab" data-toggle="pill" href="#pills-day-1" role="tab"
+                        aria-controls="pills-day-2" aria-selected="true">July 3<sup>rd</sup></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="pills-day-2-tab" data-toggle="pill" href="#pills-day-2" role="tab"
+                        aria-controls="pills-day-2" aria-selected="true">July 4<sup>th</sup></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="pills-day-3-tab" data-toggle="pill" href="#pills-day-3" role="tab"
+                        aria-controls="pills-day-3" aria-selected="false">July 5<sup>th</sup></a>
+                </li>
+            </ul>
+        </div>
+        <div class="row" style="margin-left: 5%; margin-right: 5%">
+            <div class="tab-content" id="pills-tabContent" style="height: 70vh; overflow-y: scroll; overflow-x: hidden; border-top: 1px solid #202020; border-bottom: 1px solid #202020;">
+                <div class="tab-pane fade show active" id="pills-day-1" role="tabpanel" aria-labelledby="pills-day-1-tab">
+                    <div class="row">
+                        <div class="col-md-9">
+                            <p>Community builds interviews disclosed soon!
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade show" id="pills-day-2" role="tabpanel" aria-labelledby="pills-day-2-tab">
+                    <div class="row">
+                        <div class="col-md-9">
+                            <ul class="timeline day-2">
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="pills-day-3" role="tabpanel" aria-labelledby="pills-day-3-tab">
+                    <div class="row">
+                        <div class="col-md-9">
+                            <ul class="timeline day-3">
+                            </ul>
+                        </div>
+                    </div>    
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+<!-- 
     <div class="col-md-1">
     </div>
     <div class="col-md-2" style="display: flex; align-items:center;">
-        <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+        <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist">
             <a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab"
                 aria-controls="v-pills-home" aria-selected="true">July 4<sup>th</sup></a>
             <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab"
@@ -586,14 +635,15 @@
         </div>
     </div>
     <div class="col-md-9">
-        <div class="tab-content" id="v-pills-tabContent" style="height: 70vh; overflow-y: scroll; overflow-x: hidden; border-top: 1px solid #202020; border-bottom: 1px solid #202020;">
+        <div class="tab-content" id="v-pills-tabContent"
+            style="height: 70vh; overflow-y: scroll; overflow-x: hidden; border-top: 1px solid #202020; border-bottom: 1px solid #202020;">
             <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
                 <div class="row">
                     <div class="col-md-9">
                         <ul class="timeline day-1">
                         </ul>
                     </div>
-                </div>        
+                </div>
             </div>
             <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
                 <div class="row">
@@ -604,20 +654,20 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
 </div>
 <div class="section-title" id="reviewers">
     <h2>Reviewers</h2>
 </div>
 <div class="row">
-    <div class="section-info">
+    <div class="section-info card-column">
         
             <div class="card organiser-card text-center">
                 <img src="/assets/img/profile-pic/davidlord.jpg" class="organiser-logo card-img-top">
                 <div class="card-body">
                     <div title="David">
-                        <div class="reviewer-text">David</div>
-                        <div>(Pallets)</div>
+                        <p class="reviewer-text">David</p>
+                        <p>(Pallets)</p>
                     </div>
                 </div>
             </div>
@@ -626,8 +676,8 @@
                 <img src="/assets/img/profile-pic/unknown.jpg" class="organiser-logo card-img-top">
                 <div class="card-body">
                     <div title="Adam Englander">
-                        <div class="reviewer-text">Adam Englander</div>
-                        <div>(Werkzeug Maintainer)</div>
+                        <p class="reviewer-text">Adam Englander</p>
+                        <p>(Werkzeug Maintainer)</p>
                     </div>
                 </div>
             </div>
@@ -636,8 +686,8 @@
                 <img src="/assets/img/profile-pic/unknown.jpg" class="organiser-logo card-img-top">
                 <div class="card-body">
                     <div title="Grey Li">
-                        <div class="reviewer-text">Grey Li</div>
-                        <div>(Flask Maintainer)</div>
+                        <p class="reviewer-text">Grey Li</p>
+                        <p>(Flask Maintainer)</p>
                     </div>
                 </div>
             </div>
@@ -646,8 +696,8 @@
                 <img src="/assets/img/profile-pic/unknown.jpg" class="organiser-logo card-img-top">
                 <div class="card-body">
                     <div title="Julien Demoor">
-                        <div class="reviewer-text">Julien Demoor</div>
-                        <div>(PyMUG)</div>
+                        <p class="reviewer-text">Julien Demoor</p>
+                        <p>(PyMUG)</p>
                     </div>
                 </div>
             </div>
@@ -656,8 +706,8 @@
                 <img src="/assets/img/profile-pic/unknown.jpg" class="organiser-logo card-img-top">
                 <div class="card-body">
                     <div title="Miguel Grinberg">
-                        <div class="reviewer-text">Miguel Grinberg</div>
-                        <div>(Flask Maintainer, PythonIreland)</div>
+                        <p class="reviewer-text">Miguel Grinberg</p>
+                        <p>(Flask Maintainer, PythonIreland)</p>
                     </div>
                 </div>
             </div>
@@ -666,8 +716,8 @@
                 <img src="/assets/img/profile-pic/unknown.jpg" class="organiser-logo card-img-top">
                 <div class="card-body">
                     <div title="Ali-Akber Saifee">
-                        <div class="reviewer-text">Ali-Akber Saifee</div>
-                        <div>(Flask-limiter)</div>
+                        <p class="reviewer-text">Ali-Akber Saifee</p>
+                        <p>(Flask-limiter)</p>
                     </div>
                 </div>
             </div>
@@ -676,8 +726,8 @@
                 <img src="/assets/img/profile-pic/unknown.jpg" class="organiser-logo card-img-top">
                 <div class="card-body">
                     <div title="Steven Loria">
-                        <div class="reviewer-text">Steven Loria</div>
-                        <div>(Marshmallow & Flask-marshmallow)</div>
+                        <p class="reviewer-text">Steven Loria</p>
+                        <p>(Marshmallow & Flask-marshmallow)</p>
                     </div>
                 </div>
             </div>
@@ -686,8 +736,8 @@
                 <img src="/assets/img/profile-pic/unknown.jpg" class="organiser-logo card-img-top">
                 <div class="card-body">
                     <div title="Namgyal Brisson">
-                        <div class="reviewer-text">Namgyal Brisson</div>
-                        <div>(PyMUG)</div>
+                        <p class="reviewer-text">Namgyal Brisson</p>
+                        <p>(PyMUG)</p>
                     </div>
                 </div>
             </div>
@@ -701,7 +751,7 @@
     <div class="section-info">
         
             <div class="card organiser-card">
-                <a href="https://pymug.com">
+                <a href="https://www.pymug.com">
                     <div title="PyMUG">
                         <img width="100" height="100" src="/assets/img/pymug_new.svg" class="organiser-logo">
                     </div>
