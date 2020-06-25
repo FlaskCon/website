@@ -119,6 +119,7 @@
         padding: 5px;
         margin-left: 10%;
         width: 100px;
+        white-space: nowrap;
         padding-top: 15vh;
     }
 
@@ -278,6 +279,10 @@
         margin-top: 50px;
     }
 
+    .schedule_section{
+        
+    }
+
     .schedule_section ::-webkit-scrollbar {
         width: 10px;
         background: transparent;
@@ -333,7 +338,7 @@
         </ul>
     </div>
 </nav>
-    <button type="button" id="goTop" onclick="return goTop()"><i class="fa fa-arrow-up"></i></button>
+    <!-- <button type="button" id="goTop" onclick="return goTop()"><i class="fa fa-arrow-up"></i></button> -->
 <header class="jumbotron header-page jumbotron-fluid header">
   <div class="row" style="background-color: transparent; border: none; outline: none; padding-top: 20vh">
     <div class="col text-center fira-text">
@@ -411,24 +416,24 @@
     }
   }, 1000);
 
-  mybutton = document.getElementById("goTop");
+//  mybutton = document.getElementById("goTop");
 
   // When the user scrolls down 20px from the top of the document, show the button
-  window.onscroll = function () { scrollFunction() };
+//  window.onscroll = function () { scrollFunction() };
 
-  function scrollFunction() {
-    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-      mybutton.style.display = "block";
-    } else {
-      mybutton.style.display = "none";
-    }
-  }
+//  function scrollFunction() {
+//    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+//      mybutton.style.display = "block";
+//   } else {
+//      mybutton.style.display = "none";
+//    }
+//  }
 
   // When the user clicks on the button, scroll to the top of the document
-  function goTop() {
-    document.body.scrollTop = 0; // For Safari
-    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
-  }
+//  function goTop() {
+//    document.body.scrollTop = 0; // For Safari
+//    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+//  }
 
 </script>
     
@@ -513,45 +518,46 @@
         z-index: 400;
     }
 </style>
-<div class="row schedule_section">
-    <script type="text/javascript">
-        $(document).ready(function () {
-            $('body').tooltip({
-                selector: '.bio'
-            });
-            $.getJSON("https://sessionize.com/api/v2/hfvabfol/view/All", function (data) {
-                var counter = 0;
-                $.each(data['sessions'], function () {
-                    var startTime = data['sessions'][counter]['startsAt'];
-                    var endTime = data['sessions'][counter]['endsAt'];
-                    var title = data['sessions'][counter]['title'];
-                    var description = data['sessions'][counter]['description'];
-                    var speaker_id = data['sessions'][counter]['speakers'][0];
-                    var s_i = 0;
-                    for (var i = data['speakers'].length - 1; i >= 0; i--) {
-                        speaker_data = data['speakers'][i];
-                        if (speaker_data['id'] == speaker_id) {
-                            speaker = speaker_data;
-                            s_i = i;
-                            break;
+<div class="container">
+    <div class="row schedule_section">
+        <script type="text/javascript">
+            $(document).ready(function () {
+                $('body').tooltip({
+                    selector: '.bio'
+                });
+                $.getJSON("https://sessionize.com/api/v2/hfvabfol/view/All", function (data) {
+                    var counter = 0;
+                    $.each(data['sessions'], function () {
+                        var startTime = data['sessions'][counter]['startsAt'];
+                        var endTime = data['sessions'][counter]['endsAt'];
+                        var title = data['sessions'][counter]['title'];
+                        var description = data['sessions'][counter]['description'];
+                        var speaker_id = data['sessions'][counter]['speakers'][0];
+                        var s_i = 0;
+                        for (var i = data['speakers'].length - 1; i >= 0; i--) {
+                            speaker_data = data['speakers'][i];
+                            if (speaker_data['id'] == speaker_id) {
+                                speaker = speaker_data;
+                                s_i = i;
+                                break;
+                            }
                         }
-                    }
-                    var startT = new Date(startTime);
-                    var startT_hour = startT.getHours();
-                    if (startT_hour === '0') {
-                        startT_hour = '00';
-                    }
-                    var endT = new Date(endTime);
-                    var endT_hour = endT.getHours();
-                    if (endT_hour === '0') {
-                        endT_hour = '00';
-                    }
-                    var fullName = data['speakers'][s_i]['fullName'];
-                    var bio = data['speakers'][s_i]['bio'];
-                    if (startT.getDate() == 4) {
-                        var session = `
+                        var startT = new Date(startTime);
+                        var startT_hour = startT.getHours();
+                        if (startT_hour === '0') {
+                            startT_hour = '00';
+                        }
+                        var endT = new Date(endTime);
+                        var endT_hour = endT.getHours();
+                        if (endT_hour === '0') {
+                            endT_hour = '00';
+                        }
+                        var fullName = data['speakers'][s_i]['fullName'];
+                        var bio = data['speakers'][s_i]['bio'];
+                        if (startT.getDate() == 4) {
+                            var session = `
                         <li>
-                            <p target="_blank" class="talk_title"><span class="counter">${counter + 1}</span>${title}</p>
+                            <p class="talk_title"><span class="counter">${counter + 1}</span>${title}</p>
                             <br />
                             <p class="schedule_time">
                                 ${startT.toLocaleTimeString('en-US')} GMT - ${endT.toLocaleTimeString('en-US')} GMT
@@ -570,10 +576,10 @@
                             <hr />
                         </li>
                     `
-                    } else {
-                        var session2 = `
+                        } else {
+                            var session2 = `
                         <li>
-                            <p target="_blank" class="talk_title" href="https://www.totoprayogo.com/#"><span class="counter">${counter + 1}</span>${title}</p>
+                            <p class="talk_title"><span class="counter">${counter + 1}</span>${title}</p>
                             <br />
                             <p href="#" class="schedule_time">
                                 ${startT.toLocaleTimeString('en-US')} GMT - ${endT.toLocaleTimeString('en-US')} GMT
@@ -592,118 +598,100 @@
                             <hr />
                         </li>
                     `
-                    };
-                    counter++;
-                    $('.day-2').append(session);
-                    $('.day-3').append(session2);
+                        };
+                        counter++;
+                        $('.day-2').append(session);
+                        $('.day-3').append(session2);
+                    });
+
                 });
+                //$('[data-toggle="tooltip"]').tooltip()
+                var interviews = [
+                    {
+                        "name": "Andrew Schonfeld",
+                        "project": "D-Tale",
+                        "about": "",
+                        "time": "3:15:00 PM GMT - 3:30:00 PM GMT"
+                    },
+                    {
+                        "name": "Abhishek Kaushik",
+                        "project": "Creatorlist",
+                        "about": "",
+                        "time": "3:00:00 PM GMT - 3:15:00 PM GMT"
+                    }
+                ];
 
-            });
-            //$('[data-toggle="tooltip"]').tooltip()
-            var interviews = [
-                { 
-                    "name": "Andrew Schonfeld", 
-                    "project": "D-Tale", 
-                    "about": "" 
-                },
-                { 
-                    "name": "Abhishek Kaushik", 
-                    "project": "Creatorlist", 
-                    "about": "" 
-                }
-            ];
-
-            for (var i = interviews.length - 1; i >= 0; i--) {
-                var interview = interviews[i];
-                $('#interviews').append(`
-                    <p>(15mins) ${interview['project']} interview with ${interview['name']}</p>
+                for (var i = interviews.length - 1; i >= 0; i--) {
+                    var interview = interviews[i];
+                    $('.day-1').append(`
+                    <li>
+                        <p>
+                            <h5 class="talk_title">Interview</h5>
+                        </p>
+                        <p href="#" class="schedule_time">
+                            ${interview['time']}
+                        </p>
+                        <h6>
+                            <span class="bio" data-toggle="tooltip" data-placement="auto" title="-"><i class="fa fa-info"></i></span>
+                            ${interview['name']}
+                        </h6>
+                        <h6>Project: ${interview['project']}</h6>
+                        <p>${interview['about']}</p>
+                    </li>
                     `);
-            }
-        });
-    </script>
+                }
+            });
+        </script>
 
-    <div class="col" style="display: flex; align-items:center; justify-content: center; flex-direction: column">
-        <div class="row">
-            <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
-                <li class="nav-item">
-                    <a class="nav-link active" id="pills-day-1-tab" data-toggle="pill" href="#pills-day-1" role="tab"
-                        aria-controls="pills-day-2" aria-selected="true">July 3<sup>rd</sup></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" id="pills-day-2-tab" data-toggle="pill" href="#pills-day-2" role="tab"
-                        aria-controls="pills-day-2" aria-selected="true">July 4<sup>th</sup></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" id="pills-day-3-tab" data-toggle="pill" href="#pills-day-3" role="tab"
-                        aria-controls="pills-day-3" aria-selected="false">July 5<sup>th</sup></a>
-                </li>
-            </ul>
-        </div>
-        <div class="row" style="margin-left: 5%; margin-right: 5%">
-            <div class="tab-content" id="pills-tabContent" style="height: 70vh; overflow-y: scroll; overflow-x: hidden; border-top: 1px solid #202020; border-bottom: 1px solid #202020;">
-                <div class="tab-pane fade show active" id="pills-day-1" role="tabpanel" aria-labelledby="pills-day-1-tab">
-                    <div class="row">
-                        <div class="col-md-9">
-                            <p>3pm GMT</p>
-                            <p id="interviews">
-                                
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="tab-pane fade show" id="pills-day-2" role="tabpanel" aria-labelledby="pills-day-2-tab">
-                    <div class="row">
-                        <div class="col-md-9">
-                            <ul class="timeline day-2">
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="tab-pane fade" id="pills-day-3" role="tabpanel" aria-labelledby="pills-day-3-tab">
-                    <div class="row">
-                        <div class="col-md-9">
-                            <ul class="timeline day-3">
-                            </ul>
-                        </div>
-                    </div>    
-                </div>
+        <div class="col" style="display: flex; align-items:center; justify-content: center; flex-direction: column">
+            <br />
+            <div class="row">
+                <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link active" id="pills-day-1-tab" data-toggle="pill" href="#pills-day-1"
+                            role="tab" aria-controls="pills-day-2" aria-selected="true">July 3<sup>rd</sup></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="pills-day-2-tab" data-toggle="pill" href="#pills-day-2" role="tab"
+                            aria-controls="pills-day-2" aria-selected="true">July 4<sup>th</sup></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="pills-day-3-tab" data-toggle="pill" href="#pills-day-3" role="tab"
+                            aria-controls="pills-day-3" aria-selected="false">July 5<sup>th</sup></a>
+                    </li>
+                </ul>
             </div>
-        </div>
-
-    </div>
-
-<!-- 
-    <div class="col-md-1">
-    </div>
-    <div class="col-md-2" style="display: flex; align-items:center;">
-        <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist">
-            <a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab"
-                aria-controls="v-pills-home" aria-selected="true">July 4<sup>th</sup></a>
-            <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab"
-                aria-controls="v-pills-profile" aria-selected="false">July 5<sup>th</sup></a>
-        </div>
-    </div>
-    <div class="col-md-9">
-        <div class="tab-content" id="v-pills-tabContent"
-            style="height: 70vh; overflow-y: scroll; overflow-x: hidden; border-top: 1px solid #202020; border-bottom: 1px solid #202020;">
-            <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
-                <div class="row">
-                    <div class="col-md-9">
-                        <ul class="timeline day-1">
-                        </ul>
+            <div class="row" style="margin-left: 5%; margin-right: 5%">
+                <div class="tab-content" id="pills-tabContent"
+                    style="height: 70vh; width: 80vw; overflow-y: scroll; overflow-x: hidden; border-top: 1px solid #202020; border-bottom: 1px solid #202020;">
+                    <div class="tab-pane fade show active" id="pills-day-1" role="tabpanel" aria-labelledby="pills-day-1-tab">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <ul class="timeline day-1">
+                                </ul>
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
-            <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
-                <div class="row">
-                    <div class="col-md-9">
-                        <ul class="timeline day-2">
-                        </ul>
+                    <div class="tab-pane fade show" id="pills-day-2" role="tabpanel" aria-labelledby="pills-day-2-tab">
+                        <div class="row">
+                            <div class="col-md-9">
+                                <ul class="timeline day-2">
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="pills-day-3" role="tabpanel" aria-labelledby="pills-day-3-tab">
+                        <div class="row">
+                            <div class="col-md-9">
+                                <ul class="timeline day-3">
+                                </ul>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div> -->
+    </div>
 </div>
 <div class="section-title" id="reviewers">
     <h2>Reviewers</h2>
