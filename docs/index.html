@@ -279,9 +279,7 @@
         margin-top: 50px;
     }
 
-    .schedule_section{
-        
-    }
+    .schedule_section {}
 
     .schedule_section ::-webkit-scrollbar {
         width: 10px;
@@ -292,6 +290,50 @@
     .schedule_section ::-webkit-scrollbar-thumb {
         background: #202020;
         border-radius: 20px;
+    }
+
+    /* Fixed/sticky icon bar (vertically aligned 50% from the top of the screen) */
+    .icon-bar {
+        position: fixed;
+        top: 50%;
+        -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+        transform: translateY(-50%);
+    }
+
+    /* Style the icon bar links */
+    .icon-bar a {
+        display: block;
+        text-align: center;
+        padding: 16px;
+        transition: all 0.3s ease;
+        color: white;
+        font-size: 18px;
+    }
+
+    /* Style the social media icons with color, if you want */
+    .icon-bar a:hover {
+        background-color: #000;
+    }
+
+    .facebook {
+        background: #3B5998;
+        color: white;
+    }
+
+    .twitter {
+        background: #55ACEE;
+        color: white;
+    }
+
+    .linkedin {
+        background: #007bb5;
+        color: white;
+    }
+
+    .youtube {
+        background: #bb0000;
+        color: white;
     }
 </style>
 </head>
@@ -338,7 +380,12 @@
         </ul>
     </div>
 </nav>
-    <!-- <button type="button" id="goTop" onclick="return goTop()"><i class="fa fa-arrow-up"></i></button> -->
+    <div class="icon-bar">
+  <a href="https://twitter.com/flaskcon" target="_blank" class="twitter"><i class="fab fa-twitter"></i></a>
+  <a href="https://www.youtube.com/channel/UC3QC5pASs8v5YVxKwJDtZeQ" target="_blank" class="youtube"><i class="fab fa-youtube"></i></a>
+  <a href="https://www.linkedin.com/in/flaskconference/" target="_blank" class="linkedin"><i class="fab fa-linkedin"></i></a>
+</div>
+
 <header class="jumbotron header-page jumbotron-fluid header">
   <div class="row" style="background-color: transparent; border: none; outline: none; padding-top: 20vh">
     <div class="col text-center fira-text">
@@ -451,7 +498,7 @@
         Flask maintainers and more.
     </div>
 </div>
-<style type="text/css">
+<!-- <style type="text/css">
     .socialmedia-youtube, .socialmedia-twitter{
         font-size: 55px;
         color: black;
@@ -479,7 +526,7 @@
         </a>
         
     </div>
-</div>
+</div> -->
 <div class="section-title" id="schedule_section">
     <h2>Schedule</h2>
 </div>
