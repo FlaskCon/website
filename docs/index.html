@@ -371,7 +371,7 @@
       <div class="row">
         <div class="col event-info">
           <h3><strong>July 4th & 5th</strong></h3>
-          <h5><i class="fa fa-clock"></i> <span class="time-range">9:00 - 14:00 GMT</span></h5>
+          <!-- <h5><i class="fa fa-clock"></i> <span class="time-range"></span></h5> -->
           <h5><i class="fa fa-map-marker"></i> Remote</h5>
         </div>
       </div>
@@ -382,9 +382,9 @@
 
 <script>
   // Convert the time to user's local time
-  var startTime = moment('2020-07-04T09:00:00Z').local().format("HH:mm");
-  var endTime = moment('2020-07-04T14:00:00Z').local().format("HH:mm");
-  document.querySelector(".time-range").innerHTML = startTime + ' - ' + endTime;
+//  var startTime = moment('2020-07-04T09:00:00Z').local().format("HH:mm");
+//  var endTime = moment('2020-07-04T14:00:00Z').local().format("HH:mm");
+//  document.querySelector(".time-range").innerHTML = startTime + ' - ' + endTime;
 
   // Set the date we're counting down to
   var countDownDate = new Date("July 4, 2020 09:00:00").getTime();
@@ -721,6 +721,12 @@
             <h3>How to Attend as Attendee?</h3>
             <div>
                 The event will be livestreamed to our <a href="https://www.youtube.com/channel/UC3QC5pASs8v5YVxKwJDtZeQ">Youtube channel</a>. If you want to ask questions, please join the Pallets Discord <a href="https://discord.gg/pallets">https://discord.gg/pallets</a> and join <b>#flaskcon</b> channel. It will be open during session time!
+            </div>
+            <br />
+            <h3>What time does it start?</h3>
+            <div>
+                Check the <a href="#schedule_section">schedule section</a> for time slots.
+                <br /><strong>Please note that the time is based on your timezone.</strong>
             </div>
         </div>
     </div>
