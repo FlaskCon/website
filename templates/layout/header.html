@@ -1,8 +1,50 @@
+<div class="icon-bar">
+  <a href="https://www.youtube.com/channel/UC3QC5pASs8v5YVxKwJDtZeQ" target="_blank" class="youtube"><i
+      class="fab fa-youtube"></i></a>
+  <a href="https://twitter.com/FlaskCon" target="_blank" class="twitter"><i class="fab fa-twitter"></i></a>
+  <a href="https://www.linkedin.com/in/flaskcon-conference-07aa5b1aa/" target="_blank" class="linkedin"><i
+      class="fab fa-linkedin"></i></a>
+</div>
+
+<div class="modal " tabindex="-1" role="dialog">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" style="font-size: 30px;"><strong><i class="fas fa-exclamation-triangle"
+              style="color: #f7c02b;"></i> THE CONFERENCE IS HAPPENING RIGHT NOW!! <i class="fas fa-exclamation-triangle"
+              style="color: #f7c02b;"></i></strong></h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p style="font-size: 22px; text-align: center">
+          <span class="fab fa-youtube" style="color: red;"></span> The event is being livestreamed on our <a
+            href="https://www.youtube.com/channel/UC3QC5pASs8v5YVxKwJDtZeQ" target="_blank">Youtube Channel</a>.
+          <br />
+          <br />
+          <i class="fas fa-question-circle"></i> For Q&A session, please join the <a href="https://discord.gg/pallets"
+            target="_blank">Pallets Discord</a> and join #flaskcon channel.
+        </p>
+      </div>
+      <div class="modal-footer">
+        <a type="button" class="btn btn-danger" href="#">Go to live</a>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
 <header class="jumbotron header-page jumbotron-fluid header">
   <div class="row" style="background-color: transparent; border: none; outline: none; padding-top: 20vh">
     <div class="col text-center fira-text">
       <div class="header-title">
-        <h1><span class="badge">FlaskCon <br><p style="text-align: right; font-size: 20px; background: linear-gradient(to right, #f7c02b, #ee542e); -webkit-background-clip: text; color: transparent;">2020</p></span></h1>
+        <h1><span class="badge">FlaskCon <br>
+            <p
+              style="text-align: right; font-size: 20px; background: linear-gradient(to right, #f7c02b, #ee542e); -webkit-background-clip: text; color: transparent;">
+              2020</p>
+          </span></h1>
       </div>
       <div class="row text-center" style="border-radius: 15px">
         <div class="countdown">
@@ -11,16 +53,18 @@
             <div class="row">
               <div class="col">
                 <span id="cdown-days" class="cdown cdown-days badge"></span>
-                <br/>days
+                <br /><span class="time-text">days</span>
               </div>
               <div class="col">
-                <span id="cdown-hours" class="cdown cdown-hours badge"></span><br/>hours
+                <span id="cdown-hours" class="cdown cdown-hours badge"></span><br /><span class="time-text">hours</span>
               </div>
               <div class="col">
-                <span id="cdown-minutes" class="cdown cdown-minutes badge"></span><br/>minutes
+                <span id="cdown-minutes" class="cdown cdown-minutes badge"></span><br /><span
+                  class="time-text">minutes</span>
               </div>
               <div class="col">
-                <span id="cdown-seconds" class="cdown cdown-seconds badge"></span><br/>seconds
+                <span id="cdown-seconds" class="cdown cdown-seconds badge"></span><br /><span
+                  class="time-text">seconds</span>
               </div>
             </div>
           </h4>
@@ -40,12 +84,12 @@
 
 <script>
   // Convert the time to user's local time
-//  var startTime = moment('2020-07-04T09:00:00Z').local().format("HH:mm");
-//  var endTime = moment('2020-07-04T14:00:00Z').local().format("HH:mm");
-//  document.querySelector(".time-range").innerHTML = startTime + ' - ' + endTime;
+  //  var startTime = moment('2020-07-04T09:00:00Z').local().format("HH:mm");
+  //  var endTime = moment('2020-07-04T14:00:00Z').local().format("HH:mm");
+  //  document.querySelector(".time-range").innerHTML = startTime + ' - ' + endTime;
 
   // Set the date we're counting down to
-  var countDownDate = new Date("July 4, 2020 09:00:00").getTime();
+  var countDownDate = new Date("July 4, 2020 14:00:00").getTime();
 
   // Update the count down every 1 second
   var x = setInterval(function () {
@@ -73,12 +117,9 @@
     // If the count down is finished, write some text
     if (distance < 0) {
       clearInterval(x);
-      document.querySelector(".cdown-days").innerHTML = "EXPIRED";
-      document.querySelector(".cdown-hours").innerHTML = "";
-      document.querySelector(".cdown-minutes").innerHTML = "";
-      document.querySelector(".cdown-seconds").innerHTML = "";
     }
   }, 1000);
+  $('.modal').modal('show');
 
 //  mybutton = document.getElementById("goTop");
 
