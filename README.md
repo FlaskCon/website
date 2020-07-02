@@ -1,26 +1,40 @@
-# statictipy
-Static site generator for FlaskCon and hopefully a number of other uses
+# FlaskCon Website
 
-Launch live watch
-```
-python statictipy.py
-```
+Static site generator for the FlaskCon website.
 
-Launch generate without live watch (regenerate on each change manually)
-```
-python statictipy.py --no-server
-```
-
-Changes in browser
+## File Structure
 
 ```
-# go to docs/
-python server.py
+- docs/  # Output folder
+  - assets/  # Images used in the page
+  - index.html  # The final page generated with templates, be sure not to edit this file manually
+- templates/  # You know, the Jinja templates folder
+  - layout/  # HTML structure
+  - sections/  # Page content
+- settings.py  # Page information
+- staticpy.py  # Tool used to generate the website
 ```
-Normally connects on localhost:8000
 
-With livereload you only change files and it regenerates automatically. Bit like NodeJs
+## Generate the Site
 
-All Jinja2 files in templates. Settings in settings.py
+Generate the website and launch live watch:
+```
+$ python statictipy.py
+```
 
+With livereload you only change files and it regenerates automatically. A bit like NodeJs.
 
+Otherwise, you can generate the website without live watch (then you will need to re-run the following command on each change manually):
+```
+$ python statictipy.py --no-server
+```
+## Check the Generated Site
+
+You may need to create a new terminal session, then launch a server for the output website:
+
+```
+$ cd docs
+$ python server.py
+```
+
+Now the website will be running on http://localhost:8000, it's the same with open the docs/index.html manually.
