@@ -72,13 +72,19 @@
                         }
                         var fullName = data['speakers'][s_i]['fullName'];
                         var bio = data['speakers'][s_i]['bio'];
+
+                        // Convert the time to user's local time
+                        var parsedStartTime = moment(startTime + 'Z');
+                        var parsedEndTime = moment(endTime + 'Z').local();
+                        var localStartTime = parsedStartTime.local();
+                        var localEndTime = parsedEndTime.local();
                         if (startT.getDate() == 4) {
                             var session = `
-                        <li>
+                        <li> 
                             <p class="talk_title"><span class="counter">${counter + 1}</span>${title}</p>
                             <br />
                             <p class="schedule_time">
-                                ${startT.toLocaleTimeString('en-US')} GMT - ${endT.toLocaleTimeString('en-US')} GMT
+                                ${localStartTime.format("MM/DD hh:mm A")} - ${localEndTime.format("MM/DD hh:mm A")}
                             </p>
                             <h5>
                                 <span class="bio" data-toggle="tooltip" data-placement="auto" title="${bio}"><i class="fa fa-info"></i></span>
@@ -100,7 +106,7 @@
                             <p class="talk_title"><span class="counter">${counter + 1}</span>${title}</p>
                             <br />
                             <p href="#" class="schedule_time">
-                                ${startT.toLocaleTimeString('en-US')} GMT - ${endT.toLocaleTimeString('en-US')} GMT
+                                ${localStartTime.format("MM/DD hh:mm A")} - ${localEndTime.format("MM/DD hh:mm A")}
                             </p>
                             <h5>
                                 <span class="bio" data-toggle="tooltip" data-placement="auto" title="${bio}"><i class="fa fa-info"></i></span>
@@ -129,13 +135,13 @@
                         "name": "Andrew Schonfeld",
                         "project": "D-Tale",
                         "about": "",
-                        "time": "3:15:00 PM GMT - 3:30:00 PM GMT"
+                        "time": moment('2020-07-03T15:15:00Z').local().format("MM/DD hh:mm A") + ' - ' + moment('2020-07-03T15:30:00Z').local().format("MM/DD hh:mm A")
                     },
                     {
                         "name": "Abhishek Kaushik",
                         "project": "Creatorlist",
                         "about": "",
-                        "time": "3:00:00 PM GMT - 3:15:00 PM GMT"
+                        "time": moment('2020-07-03T15:00:00Z').local().format("MM/DD hh:mm A") + ' - ' + moment('2020-07-03T15:15:00Z').local().format("MM/DD hh:mm A")
                     }
                 ];
 
