@@ -15,12 +15,12 @@
 
 
 <!-- JS, Popper.js, and jQuery -->
-<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" 
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"
     integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
     integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
     crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/js/bootstrap.min.js" 
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/js/bootstrap.min.js"
     integrity="sha256-OFRAJNoaD8L3Br5lglV7VyLRf0itmoBzWUoM+Sji4/8=" crossorigin="anonymous"></script>
 <link href="https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/moment@2.27.0/moment.min.js"></script>
@@ -213,7 +213,7 @@
     }
 
     .countdown .cdown {
-        font-size: calc(4vw + 0.1vh + 0.1vmin);
+        font-size: calc(5vw + 0.1vh + 0.1vmin);
     }
 
     .countdown .badge {
@@ -292,6 +292,47 @@
         border-radius: 20px;
     }
 
+    .icon-bar {
+        position: fixed;
+        top: 50%;
+        -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+        transform: translateY(-50%);
+    }
+
+    /* Style the icon bar links */
+    .icon-bar a {
+        display: block;
+        text-align: center;
+        padding: 16px;
+        transition: all 0.3s ease;
+        color: white;
+        font-size: calc(1vw + 1vh + 1vmin);
+    }
+
+    /* Style the social media icons with color, if you want */
+    .icon-bar a:hover {
+        background-color: #000;
+    }
+
+    .twitter {
+        background: #55ACEE;
+        color: white;
+    }
+
+    .linkedin {
+        background: #007bb5;
+        color: white;
+    }
+
+    .youtube {
+        background: #bb0000;
+        color: white;
+    }
+
+    .time-text{
+        font-size: calc(1vw + 1vh + 1vmin);
+    }
 </style>
 </head>
 <body>
@@ -340,11 +381,53 @@
         </ul>
     </div>
 </nav>
-    <header class="jumbotron header-page jumbotron-fluid header">
+    <div class="icon-bar">
+  <a href="https://www.youtube.com/channel/UC3QC5pASs8v5YVxKwJDtZeQ" target="_blank" class="youtube"><i
+      class="fab fa-youtube"></i></a>
+  <a href="https://twitter.com/FlaskCon" target="_blank" class="twitter"><i class="fab fa-twitter"></i></a>
+  <a href="https://www.linkedin.com/in/flaskcon-conference-07aa5b1aa/" target="_blank" class="linkedin"><i
+      class="fab fa-linkedin"></i></a>
+</div>
+
+<div class="modal " tabindex="-1" role="dialog">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" style="font-size: 30px;"><strong><i class="fas fa-exclamation-triangle"
+              style="color: #f7c02b;"></i> THE CONFERENCE IS HAPPENING RIGHT NOW!! <i class="fas fa-exclamation-triangle"
+              style="color: #f7c02b;"></i></strong></h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p style="font-size: 22px; text-align: center">
+          <span class="fab fa-youtube" style="color: red;"></span> The event is being livestreamed on our <a
+            href="https://www.youtube.com/channel/UC3QC5pASs8v5YVxKwJDtZeQ" target="_blank">Youtube Channel</a>.
+          <br />
+          <br />
+          <i class="fas fa-question-circle"></i> For Q&A session, please join the <a href="https://discord.gg/pallets"
+            target="_blank">Pallets Discord</a> and join #flaskcon channel.
+        </p>
+      </div>
+      <div class="modal-footer">
+        <a type="button" class="btn btn-danger" href="#">Go to live</a>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<header class="jumbotron header-page jumbotron-fluid header">
   <div class="row" style="background-color: transparent; border: none; outline: none; padding-top: 20vh">
     <div class="col text-center fira-text">
       <div class="header-title">
-        <h1><span class="badge">FlaskCon <br><p style="text-align: right; font-size: 20px; background: linear-gradient(to right, #f7c02b, #ee542e); -webkit-background-clip: text; color: transparent;">2020</p></span></h1>
+        <h1><span class="badge">FlaskCon <br>
+            <p
+              style="text-align: right; font-size: 20px; background: linear-gradient(to right, #f7c02b, #ee542e); -webkit-background-clip: text; color: transparent;">
+              2020</p>
+          </span></h1>
       </div>
       <div class="row text-center" style="border-radius: 15px">
         <div class="countdown">
@@ -353,16 +436,18 @@
             <div class="row">
               <div class="col">
                 <span id="cdown-days" class="cdown cdown-days badge"></span>
-                <br/>days
+                <br /><span class="time-text">days</span>
               </div>
               <div class="col">
-                <span id="cdown-hours" class="cdown cdown-hours badge"></span><br/>hours
+                <span id="cdown-hours" class="cdown cdown-hours badge"></span><br /><span class="time-text">hours</span>
               </div>
               <div class="col">
-                <span id="cdown-minutes" class="cdown cdown-minutes badge"></span><br/>minutes
+                <span id="cdown-minutes" class="cdown cdown-minutes badge"></span><br /><span
+                  class="time-text">minutes</span>
               </div>
               <div class="col">
-                <span id="cdown-seconds" class="cdown cdown-seconds badge"></span><br/>seconds
+                <span id="cdown-seconds" class="cdown cdown-seconds badge"></span><br /><span
+                  class="time-text">seconds</span>
               </div>
             </div>
           </h4>
@@ -371,7 +456,7 @@
       <div class="row">
         <div class="col event-info">
           <h3><strong>July 4th & 5th</strong></h3>
-          <h5><i class="fa fa-clock"></i> <span class="time-range">9:00 - 14:00 GMT</span></h5>
+          <!-- <h5><i class="fa fa-clock"></i> <span class="time-range"></span></h5> -->
           <h5><i class="fa fa-map-marker"></i> Remote</h5>
         </div>
       </div>
@@ -382,12 +467,12 @@
 
 <script>
   // Convert the time to user's local time
-  var startTime = moment('2020-07-04T09:00:00Z').local().format("HH:mm");
-  var endTime = moment('2020-07-04T14:00:00Z').local().format("HH:mm");
-  document.querySelector(".time-range").innerHTML = startTime + ' - ' + endTime;
+  //  var startTime = moment('2020-07-04T09:00:00Z').local().format("HH:mm");
+  //  var endTime = moment('2020-07-04T14:00:00Z').local().format("HH:mm");
+  //  document.querySelector(".time-range").innerHTML = startTime + ' - ' + endTime;
 
   // Set the date we're counting down to
-  var countDownDate = new Date("July 4, 2020 09:00:00").getTime();
+  var countDownDate = new Date("July 4, 2020 14:00:00").getTime();
 
   // Update the count down every 1 second
   var x = setInterval(function () {
@@ -415,10 +500,7 @@
     // If the count down is finished, write some text
     if (distance < 0) {
       clearInterval(x);
-      document.querySelector(".cdown-days").innerHTML = "EXPIRED";
-      document.querySelector(".cdown-hours").innerHTML = "";
-      document.querySelector(".cdown-minutes").innerHTML = "";
-      document.querySelector(".cdown-seconds").innerHTML = "";
+      $('.modal').modal('show');
     }
   }, 1000);
 
@@ -457,7 +539,7 @@
         Flask maintainers and more.
     </div>
 </div>
-<style type="text/css">
+<!-- <style type="text/css">
     .socialmedia-youtube, .socialmedia-twitter{
         font-size: 55px;
         color: black;
@@ -485,7 +567,7 @@
         </a>
         
     </div>
-</div>
+</div> -->
 <div class="section-title" id="schedule_section">
     <h2>Schedule</h2>
 </div>
@@ -721,6 +803,16 @@
             <h3>How to Attend as Attendee?</h3>
             <div>
                 The event will be livestreamed to our <a href="https://www.youtube.com/channel/UC3QC5pASs8v5YVxKwJDtZeQ">Youtube channel</a>. If you want to ask questions, please join the Pallets Discord <a href="https://discord.gg/pallets">https://discord.gg/pallets</a> and join <b>#flaskcon</b> channel. It will be open during session time!
+            </div>
+            <br />
+            <h3>What time does the conference start?</h3>
+            <div>
+                Check the <a href="#schedule_section">schedule section</a> for time slots. <strong>Please note that the time is based on your timezone.</strong>
+            </div>
+            <br />
+            <h3>Where to get the link of the conference?</h3>
+            <div>
+                It will be posted right here on the website and on our social media pages. Stay connected!
             </div>
         </div>
     </div>
