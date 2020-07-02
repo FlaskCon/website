@@ -500,9 +500,9 @@
     // If the count down is finished, write some text
     if (distance < 0) {
       clearInterval(x);
+      $('.modal').modal('show');
     }
   }, 1000);
-  $('.modal').modal('show');
 
 //  mybutton = document.getElementById("goTop");
 
