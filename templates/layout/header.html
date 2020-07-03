@@ -73,7 +73,9 @@
       <div class="row">
         <div class="col event-info">
           <h3><strong>July 4th & 5th</strong></h3>
-          <h5><i class="fas fa-clock"></i> <span class="time-range "></span></h5>
+          <h5><i class="fas fa-clock"></i> <span class="time-range "></span> <sup><i class="fas fa-question-circle"
+                data-toggle="tooltip" data-placement="top" title="Showing your local time & date"
+                style="color: #17a2b8"></i></sup> </h5>
           <h5><i class="fas fa-map-marker"></i> Remote</h5>
         </div>
       </div>
@@ -84,7 +86,7 @@
 
 <script>
   // Convert the time to user's local time
-  
+
   // Set the date we're counting down to
   var countDownDate = new Date("July 4, 2020 14:00:00 UTC").getTime();
   // timestamp with UTC time
@@ -122,23 +124,33 @@
     }
   }, 1000);
 
-//  mybutton = document.getElementById("goTop");
+  //  mybutton = document.getElementById("goTop");
 
   // When the user scrolls down 20px from the top of the document, show the button
-//  window.onscroll = function () { scrollFunction() };
+  //  window.onscroll = function () { scrollFunction() };
 
-//  function scrollFunction() {
-//    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-//      mybutton.style.display = "block";
-//   } else {
-//      mybutton.style.display = "none";
-//    }
-//  }
+  //  function scrollFunction() {
+  //    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+  //      mybutton.style.display = "block";
+  //   } else {
+  //      mybutton.style.display = "none";
+  //    }
+  //  }
 
   // When the user clicks on the button, scroll to the top of the document
-//  function goTop() {
-//    document.body.scrollTop = 0; // For Safari
-//    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
-//  }
+  //  function goTop() {
+  //    document.body.scrollTop = 0; // For Safari
+  //    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+  //  }
+
+  $(function () {
+    $('[data-toggle="tooltip"]').tooltip()
+  })
+  $(document).ready(function() {
+    setTimeout(function () { $('i').tooltip('show'); }, 2000);
+    setTimeout(function () { $('i').tooltip('hide'); }, 4500);
+  })
+
+
 
 </script>
