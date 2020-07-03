@@ -394,8 +394,8 @@
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" style="font-size: 30px;"><strong><i class="fas fa-exclamation-triangle"
-              style="color: #f7c02b;"></i> THE CONFERENCE IS HAPPENING RIGHT NOW!! <i class="fas fa-exclamation-triangle"
-              style="color: #f7c02b;"></i></strong></h5>
+              style="color: #f7c02b;"></i> THE CONFERENCE IS HAPPENING RIGHT NOW!! <i
+              class="fas fa-exclamation-triangle" style="color: #f7c02b;"></i></strong></h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -472,7 +472,8 @@
   //  document.querySelector(".time-range").innerHTML = startTime + ' - ' + endTime;
 
   // Set the date we're counting down to
-  var countDownDate = new Date("July 4, 2020 14:00:00").getTime();
+  var countDownDate = new Date("July 4, 2020 14:00:00 UTC").getTime();
+  // timestamp with UTC time
 
   // Update the count down every 1 second
   var x = setInterval(function () {
