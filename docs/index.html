@@ -389,7 +389,7 @@
       class="fab fa-linkedin"></i></a>
 </div>
 
-<div class="modal " tabindex="-1" role="dialog">
+<div class="modal event-modal" tabindex="-1" role="dialog">
   <div class="modal-dialog modal-lg" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -412,6 +412,31 @@
       </div>
       <div class="modal-footer">
         <a type="button" class="btn btn-danger" href="#">Go to live</a>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal interview-modal" tabindex="-1" role="dialog">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" style="font-size: 30px;"><strong><i class="fas fa-exclamation-triangle"
+              style="color: #f7c02b;"></i> PROJECT DEMOS HAPPENING RIGHT NOW!! <i
+              class="fas fa-exclamation-triangle" style="color: #f7c02b;"></i></strong></h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p style="font-size: 22px; text-align: center">
+          <span class="fab fa-video-camera" style="color: red;"></span> We have two project demos going on right now! Tune in to see how Creatorlist and D-Tale use Flask.
+          <br />
+        </p>
+      </div>
+      <div class="modal-footer">
+        <a type="button" class="btn btn-danger" href="https://www.youtube.com/watch?v=mAiTYBKGiVQ&feature=youtu.be" target="_blank">Go to live</a>
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
       </div>
     </div>
@@ -503,7 +528,7 @@
     // If the count down is finished, write some text
     if (distance < 0) {
       clearInterval(x);
-      $('.modal').modal('show');
+      $('.event-modal').modal('show');
     }
   }, 1000);
 
@@ -530,6 +555,7 @@
     $('[data-toggle="tooltip"]').tooltip()
   })
   $(document).ready(function() {
+    $('.interview-modal').modal('show');
     setTimeout(function () { $('i').tooltip('show'); }, 2000);
     setTimeout(function () { $('i').tooltip('hide'); }, 4500);
   })
