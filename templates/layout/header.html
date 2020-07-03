@@ -73,8 +73,8 @@
       <div class="row">
         <div class="col event-info">
           <h3><strong>July 4th & 5th</strong></h3>
-          <!-- <h5><i class="fa fa-clock"></i> <span class="time-range"></span></h5> -->
-          <h5><i class="fa fa-map-marker"></i> Remote</h5>
+          <h5><i class="fas fa-clock"></i> <span class="time-range "></span></h5>
+          <h5><i class="fas fa-map-marker"></i> Remote</h5>
         </div>
       </div>
     </div>
@@ -84,13 +84,13 @@
 
 <script>
   // Convert the time to user's local time
-  //  var startTime = moment('2020-07-04T09:00:00Z').local().format("HH:mm");
-  //  var endTime = moment('2020-07-04T14:00:00Z').local().format("HH:mm");
-  //  document.querySelector(".time-range").innerHTML = startTime + ' - ' + endTime;
-
+  
   // Set the date we're counting down to
   var countDownDate = new Date("July 4, 2020 14:00:00 UTC").getTime();
   // timestamp with UTC time
+  console.log(countDownDate);
+  var startTime = moment(countDownDate).local().format("HH:mm");
+  document.querySelector(".time-range").innerHTML = startTime;
 
   // Update the count down every 1 second
   var x = setInterval(function () {
