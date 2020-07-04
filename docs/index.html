@@ -381,15 +381,71 @@
         </ul>
     </div>
 </nav>
-    <div class="icon-bar">
-  <a href="https://www.youtube.com/channel/UC3QC5pASs8v5YVxKwJDtZeQ" target="_blank" class="youtube"><i
+    <style>
+  .youtube-icon{
+    animation: shake 0.4s;
+    animation-iteration-count: infinite;
+  }
+  .youtube-icon:hover{
+    animation: none;
+  }
+
+  @keyframes shake {
+    0% {
+      transform: translate(1px, 1px) rotate(0deg);
+    }
+
+    10% {
+      transform: translate(-1px, -2px) rotate(-1deg);
+    }
+
+    20% {
+      transform: translate(-3px, 0px) rotate(1deg);
+    }
+
+    30% {
+      transform: translate(3px, 2px) rotate(0deg);
+    }
+
+    40% {
+      transform: translate(1px, -1px) rotate(1deg);
+    }
+
+    50% {
+      transform: translate(-1px, 2px) rotate(-1deg);
+    }
+
+    60% {
+      transform: translate(-3px, 1px) rotate(0deg);
+    }
+
+    70% {
+      transform: none;
+    }
+    
+    80% {
+      transform: none;
+    }
+    
+    90% {
+      transform: none;
+    }
+    
+    100% {
+      transform: none;
+    }
+  }
+</style>
+
+<div class="icon-bar">
+  <a href="https://www.youtube.com/watch?v=a8Y6N1iCOA8" target="_blank" class="youtube youtube-icon"><i
       class="fab fa-youtube"></i></a>
   <a href="https://twitter.com/FlaskCon" target="_blank" class="twitter"><i class="fab fa-twitter"></i></a>
   <a href="https://www.linkedin.com/in/flaskcon-conference-07aa5b1aa/" target="_blank" class="linkedin"><i
       class="fab fa-linkedin"></i></a>
 </div>
 
-<div class="modal event-modal" tabindex="-1" role="dialog">
+<div class="modal event-modal" tabindex="-1" role="dialog" data-backdrop="static" data-keyboard="false">
   <div class="modal-dialog modal-lg" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -411,7 +467,8 @@
         </p>
       </div>
       <div class="modal-footer">
-        <a type="button" class="btn btn-danger" href="#">Go to live</a>
+        <a type="button" class="btn btn-danger" href="https://www.youtube.com/watch?v=a8Y6N1iCOA8" target="_blank">Go to
+          live</a>
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
       </div>
     </div>
@@ -456,7 +513,7 @@
         <div class="col event-info">
           <h3><strong>July 4th & 5th</strong></h3>
           <h5><i class="fas fa-clock"></i> <span class="time-range "></span> <sup><i class="fas fa-question-circle"
-                data-toggle="tooltip" data-placement="top" title="Showing local time"
+                data-toggle="tooltip" data-placement="top" title="Showing your local time"
                 style="color: #17a2b8"></i></sup> </h5>
           <h5><i class="fas fa-map-marker"></i> Remote</h5>
         </div>
@@ -528,7 +585,7 @@
   $(function () {
     $('[data-toggle="tooltip"]').tooltip()
   })
-  $(document).ready(function() {
+  $(document).ready(function () {
     setTimeout(function () { $('i').tooltip('show'); }, 2000);
     setTimeout(function () { $('i').tooltip('hide'); }, 4500);
   })
