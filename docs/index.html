@@ -386,7 +386,7 @@
         </ul>
     </div>
 </nav>
-    <style>
+    <!-- <style>
   .youtube-icon{
     animation: shake 0.4s;
     animation-iteration-count: infinite;
@@ -440,10 +440,10 @@
       transform: none;
     }
   }
-</style>
+</style> -->
 
 <div class="icon-bar">
-  <a href="https://www.youtube.com/watch?v=h4wLSDeQtUE" target="_blank" class="youtube youtube-icon"><i
+  <a href="https://www.youtube.com/channel/UC3QC5pASs8v5YVxKwJDtZeQ" target="_blank" class="youtube youtube-icon"><i
       class="fab fa-youtube"></i></a>
   <a href="https://www.twitch.tv/pythonireland" target="_blank" class="twitch youtube-icon"><i
       class="fab fa-twitch"></i></a>
@@ -494,9 +494,9 @@
               2020</p>
           </span></h1>
       </div>
-      <!-- <div class="row text-center" style="border-radius: 15px">
+      <div class="row text-center" style="border-radius: 15px">
         <div class="countdown">
-          <span><u>Event starts in</u></span>
+          <span><u>Event continues in</u></span>
           <h4>
             <div class="row">
               <div class="col">
@@ -517,10 +517,10 @@
             </div>
           </h4>
         </div>
-      </div> -->
+      </div>
       <div class="row">
         <div class="col event-info">
-          <h3><strong>July 4th & 5th</strong></h3>
+          <h3><strong>July <del>4th</del> & 5th</strong></h3>
           <h5><i class="fas fa-clock"></i> <span class="time-range "></span> <sup><i class="fas fa-question-circle"
                 data-toggle="tooltip" data-placement="top" title="Showing your local time"
                 style="color: #17a2b8"></i></sup> </h5>
@@ -536,7 +536,7 @@
   // Convert the time to user's local time
 
   // Set the date we're counting down to
-  var countDownDate = new Date("July 4, 2020 14:00:00 UTC").getTime();
+  var countDownDate = new Date("July 5, 2020 09:00:00 UTC").getTime();
   // timestamp with UTC time
   // console.log(countDownDate);
   var startTime = moment(countDownDate).local().format("HH:mm");
@@ -552,18 +552,18 @@
     var distance = countDownDate - now;
 
     // Time calculations for days, hours, minutes and seconds
-    // var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-    // var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    // var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-    // var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
     // Display the result in the element with id="demo"
-    // document.querySelector(".cdown-days").innerHTML = days;
-    // document.querySelector(".cdown-hours").innerHTML = hours;
-    // document.querySelector(".cdown-minutes").innerHTML = minutes;
-    // document.querySelector(".cdown-seconds").innerHTML = seconds;
+    document.querySelector(".cdown-days").innerHTML = days;
+    document.querySelector(".cdown-hours").innerHTML = hours;
+    document.querySelector(".cdown-minutes").innerHTML = minutes;
+    document.querySelector(".cdown-seconds").innerHTML = seconds;
 
-    //  document.getElementById("cdown").innerHTML = days + "<br/>d " + hours + "h " + minutes + "m " + seconds + "s ";
+    document.getElementById("cdown").innerHTML = days + "<br/>d " + hours + "h " + minutes + "m " + seconds + "s ";
 
     // If the count down is finished, write some text
     if (distance < 0) {
@@ -823,11 +823,11 @@
                             role="tab" aria-controls="pills-day-2" aria-selected="true">July 3<sup>rd</sup></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" id="pills-day-2-tab" data-toggle="pill" href="#pills-day-2" role="tab"
+                        <a class="nav-link" id="pills-day-2-tab" data-toggle="pill" href="#pills-day-2" role="tab"
                             aria-controls="pills-day-2" aria-selected="true">July 4<sup>th</sup></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" id="pills-day-3-tab" data-toggle="pill" href="#pills-day-3" role="tab"
+                        <a class="nav-link active" id="pills-day-3-tab" data-toggle="pill" href="#pills-day-3" role="tab"
                             aria-controls="pills-day-3" aria-selected="false">July 5<sup>th</sup></a>
                     </li>
                 </ul>
@@ -843,7 +843,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="tab-pane fade show active" id="pills-day-2" role="tabpanel"
+                    <div class="tab-pane fade show" id="pills-day-2" role="tabpanel"
                         aria-labelledby="pills-day-2-tab">
                         <div class="row">
                             <div class="col-md-9">
@@ -852,7 +852,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="tab-pane fade" id="pills-day-3" role="tabpanel" aria-labelledby="pills-day-3-tab">
+                    <div class="tab-pane fade show active" id="pills-day-3" role="tabpanel" aria-labelledby="pills-day-3-tab">
                         <div class="row">
                             <div class="col-md-9">
                                 <ul class="timeline day-3">
