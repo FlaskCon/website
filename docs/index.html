@@ -492,7 +492,7 @@
               2020</p>
           </span></h1>
       </div>
-      <div class="row text-center" style="border-radius: 15px">
+      <!-- <div class="row text-center" style="border-radius: 15px">
         <div class="countdown">
           <span><u>Event starts in</u></span>
           <h4>
@@ -515,7 +515,7 @@
             </div>
           </h4>
         </div>
-      </div>
+      </div> -->
       <div class="row">
         <div class="col event-info">
           <h3><strong>July 4th & 5th</strong></h3>
@@ -550,16 +550,16 @@
     var distance = countDownDate - now;
 
     // Time calculations for days, hours, minutes and seconds
-    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    // var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    // var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    // var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    // var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
     // Display the result in the element with id="demo"
-    document.querySelector(".cdown-days").innerHTML = days;
-    document.querySelector(".cdown-hours").innerHTML = hours;
-    document.querySelector(".cdown-minutes").innerHTML = minutes;
-    document.querySelector(".cdown-seconds").innerHTML = seconds;
+    // document.querySelector(".cdown-days").innerHTML = days;
+    // document.querySelector(".cdown-hours").innerHTML = hours;
+    // document.querySelector(".cdown-minutes").innerHTML = minutes;
+    // document.querySelector(".cdown-seconds").innerHTML = seconds;
 
     //  document.getElementById("cdown").innerHTML = days + "<br/>d " + hours + "h " + minutes + "m " + seconds + "s ";
 
