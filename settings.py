@@ -30,7 +30,7 @@ ORGANISERS = [
      "url": "http://pythonnigeria.org/"},
     {"name": "PyCon China",
      "logo": "/assets/img/python_china.jpg",
-     "url": "https://cn.pycon.org/en/index.html"},
+     "url": "https://cn.pycon.org/"},
     {"name": "PythonMoscow",
      "logo": "/assets/img/python_moscow.png",
      "url": "http://www.moscowpython.ru/"},
